@@ -160,6 +160,44 @@ package configuration.
   (setq use-package-always-ensure t)
 #+end_src
 
+** Pretty colors
+# TODO : Not sure if mentioning color schemes in the actual
+# presentation is a good idea. Maybe could only take 10 seconds, then
+# people can play with the options while we move on?
+
+# TODO : ef-themes seem to conflict with modus themes, at least for
+# display-line-numebers mode line numbers column. and some other text
+# highlighting aspects.
+# Maybe need to run =M-x disable-theme= before changing themes?
+
+# TODO : Test the initial theme loading prompting you if you want to
+# trust the theme code. Should we make the base configuration trust
+# all the ef-themes by default? Or just mention the minibuffer and
+# that people should look there for prompts?
+
+#+begin_src elisp
+  (use-package ef-themes)
+  ;; A nice dark theme. `'modus-operandi` is the light theme version.
+  ;; You can change the theme with `M-x load-theme`.
+  ;; You can pick from the ef-themes with `M-x ef-themes-select`.
+  (load-theme 'modus-vivendi)
+#+end_src
+
+** Conveniences
+Follow "Common User Access" conventions.
+
+- =C-z= = Undo
+- =C-x= = Cut
+- =C-c= = Copy
+- =C-v= = Paste
+
+#+begin_src elisp
+  (use-package cua-base
+    :custom
+    (cua-keep-region-after-copy t)
+    :init
+    (cua-mode))
+#+end_src
 
 * (optional) Advanced Emacs
 ** (optional) Advanced Emacs
