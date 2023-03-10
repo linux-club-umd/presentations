@@ -1,0 +1,35 @@
+#+TITLE: Basic Emacs configuration
+#+PROPERTY: header-args :tangle init.el
+
+* Setup the package manager
+Emacs has *many* features built-in, but we will want some third-party packages.
+Here, "packages" just means additional code for Emacs.
+You can generally think of them like plugins.
+
+The =package-archives= variable specifies where to download packages from.
+
+- MELPA = Widely used third-party package repository.
+- ELPA = Emacs Lisp Package Archive. This is the official Emacs
+  package archive.
+
+#+begin_src elisp
+  ;; Initialize package manager
+  (require 'package)
+  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                           ("elpa" . "https://elpa.gnu.org/packages/")))
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+#+end_src
+
+We will be using =use-package=, a tool for declaratively specifying
+packages you want to use. Basically it makes it more convenient to
+install and configure packages.
+
+#+begin_src elisp
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+  (require 'use-package)
+  ;; Download and install configured packages if they aren't already installed.
+  (setq use-package-always-ensure t)
+#+end_src
