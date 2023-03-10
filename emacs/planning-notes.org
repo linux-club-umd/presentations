@@ -1,0 +1,135 @@
+Meeting notes
+
+* Q: Literate config as slideshow?
+Yes. Make the literate config the slideshow.
+
+S: Don't have people just listening, they should be following along ideally.
+
+At least following along during parts where we cover Emacs features that they can try themselves.
+
+Make a short link to it so people can pull up the slides on their
+laptop in case they miss something and need to go back to review it,
+so we can keep the presentation running smoothly.
+
+* Q: Installation time potentially annoying, only have 30 minutes.
+- MacOS: =brew install --cask emacs=
+- Windows: Click-through installer
+
+Recommend them to install it beforehand, don't spend more than 5 minutes on installation.
+
+* Q: Emacs config files for Windows
+https://stackoverflow.com/questions/189490/where-can-i-find-my-emacs-file-for-emacs-running-on-windows
+
+Maybe use =_emacs=. Make sure to try it.
+
+Maybe could have =.emacs.d= in Git repository and have people clone it.
+
+On Windows can make a =.emacs.d= folder now in File Explorer, just
+need to right click.
+
+S: Either include folder in the repo and tell people to clone it and
+copy paste the folder, or have them make the folder.
+
+WSL not a good option if want the GUI, and we do want people using GUI Emacs.
+
+Can go over creating the folder during the presentation.
+
+* Q: S: What is the most effective way for them to view the content?
+S: Just having source code and reading through it not effective.
+Should have organized slides.
+* Q: Ahead of time stuff
+Unity workshops asked people to install stuff ahead of time.
+
+We can ask people to install Emacs ahead of time.
+
+Then at the start let people know if they don't have it installed or
+had issues, just pay attention and we can help them afterwards.
+
+* Q: Stuff to include in the base config
+** cua-mode
+** Vertico, Consult, etc.
+* Q: Topics to cover
+Most time should be spend on using Emacs for coding. And basic
+absolutely necessary things like the help systems and the basic
+shortcuts.
+
+S: Get to the level of a fancy Notepad++.
+
+S: Introduce how to install packages, how to use help system so people
+can explore more on their own.
+
+S: Mention the interesting bits that some people may want to dive
+into, like org-mode, evil-mode, etc. But don't spend too much time on
+them specifically.
+
+** TODO: S: Test on some popular programming languages
+S: eglot and tree-sitter require external binaries. Tree-sitter can
+fetch binaries automatically so it may be acceptable to use.
+Tree-sitter produces better syntax highlighting.
+
+S: Try to get basic completion.
+
+- Python
+- JavaScript
+
+** Introduction
+Quickly state "Emacs is a highly configurable text editor".
+** ELisp
+- Function call syntax.
+  - S: Introduce basic syntax when talking about the beginning of the
+    config with the package manager initialization.
+  - S: Write or link to a reference for people to read over, but
+    during presentation spend only minimal time on it.
+- Major, minor modes,
+** Help systems
+- =C-h=, =C-h ?=
+- =C-h k= / =C-h c=, describe-key
+- =info= system.
+- Menu bar: Help button.
+** Mouse / menu bar
+** ? Show kill ring
+Mention Consult, Vertico
+** Coding / editing
+*** Code folding?
+selective-display?
+*** Basic shortcuts
+S: Need a package for undo-redo to change the default Emacs undo system.
+Can bind C-S-z to redo, and C-y to redo.
+Having to press C-g to reverse direction of undo is annoying and confusing.
+*** Comments
+=C-x C-;= : Maybe rebind this because of ibus issue on some Linuxes.
+
+Mention basic editing operations, especially code operations.
+** Other basic keys
+*** Window splitting management
+wind-move (or is it win-move?)
+
+Maybe have better mneumonic binds for window split management.
+
+tab-line-mode or tab-bar-mode.
+Not the same as familiar tabs, are like Vim tabs.
+** Advanced coding stuff
+*** Per-language config
+- LSP
+- (tab) completion
+*** Running shells and terminals in Emacs
+- shell
+- eshell -- Works the same everywhere, even on Windows.
+- term, ansi-term
+- Maybe can run Powershell with Emacs somehow.
+
+** Advanced Emacs-specific stuff
+List/mention, but don't go in-depth.
+- evil-mode
+- magit
+- org-mode
+- TRAMP
+- eww
+- Email
+  - mu4e
+  - gnus
+
+Could include them in the config as optional, maybe set to disable by default.
+*** ? Numeric prefix
+
+** TODO: Turn off bell on Windows?

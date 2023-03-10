@@ -1,5 +1,7 @@
 #+TITLE: Basic Emacs configuration
 #+PROPERTY: header-args :tangle init.el
+#+AUTHOR: Jeffrey Fisher; Skylar
+#+beamer_theme: metropolis
 
 * Setup the package manager
 Emacs has *many* features built-in, but we will want some third-party packages.
