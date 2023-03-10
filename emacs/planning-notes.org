@@ -134,3 +134,15 @@ Could include them in the config as optional, maybe set to disable by default.
 *** ? Numeric prefix
 
 ** TODO: Turn off bell on Windows?
+** "Surviving" Emacs
+Should come up with a less scary name for this. Really Emacs is not
+that bad if you want to use it at a Notepad++ level, and getting to
+Visual Studio Code level isn't terrible depending on what level of
+support you want from language plugins, LSP, etc.
+
+*** TODO: Notation/terms glossary
+Don't spend more than 10 seconds mentioning them during the
+presentation. Our presentation should be readable for people without
+Emacs experience, but then have a glossary they can look at later if
+they want to dive deeper and look at other Emacs information sources,
+internal documentation, etc.
