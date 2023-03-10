@@ -86,6 +86,7 @@ Quickly state "Emacs is a highly configurable text editor".
 - =C-h k= / =C-h c=, describe-key
 - =info= system.
 - Menu bar: Help button.
+- Customize: It's not really "help", but it is nice to use for changing settings.
 ** Mouse / menu bar
 ** ? Show kill ring
 Mention Consult, Vertico
