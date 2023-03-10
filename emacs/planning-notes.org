@@ -118,7 +118,7 @@ Not the same as familiar tabs, are like Vim tabs.
 - eshell -- Works the same everywhere, even on Windows.
 - term, ansi-term
 - Maybe can run Powershell with Emacs somehow.
-
+*** ? Macros
 ** Advanced Emacs-specific stuff
 List/mention, but don't go in-depth.
 - evil-mode

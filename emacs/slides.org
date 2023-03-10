@@ -3,8 +3,8 @@
 #+AUTHOR: Jeffrey Fisher; Skylar
 #+beamer_theme: metropolis
 
-# # Top level headings will be sections, 2nd level headings will be slides.
-# #+OPTIONS: H:2
+# Top level headings will be sections, 2nd level headings will be slides.
+#+OPTIONS: H:2
 
 # Make code block font size smaller.
 #+LATEX_HEADER: \usepackage{fancyvrb}
@@ -14,14 +14,61 @@
 Before publishing this document, search for the keyword TODO, and make
 sure nothing shows up.
 
+** TODO: Notation/terms glossary
+- Emacs keyboard shortcut notation
+
+** TODO: Make links in the PDF slide output more obvious with underline and color.
 * Meta rules for this document :noexport:
 ** Emacs Lisp
 *** Avoid using quote where possible.
 Do not use quote for lists, use =(list)= instead if possible. =(list)=
 is hopefully more readable and approachable for people new to Lisp,
 which the majority of our audience likely will be.
+** Famliarity
+*** Use popular notation for keyboard shortcuts.
+# TODO: Jeff: I'm unsure about this. We could introduce it at the
+# start, then use Emacs notation throughout the presentation.
+# I'm not sure which option is better.
+Can mention Emacs notation (=C-x=), but should use a popular notation
+throughout the presentation (=Ctrl-x=).
 
-* Emacs Lisp code
+* What is Emacs?
+** What is Emacs?
+Emacs is:
+
+- a text editor
+- customizable
+  - There are many settings available.
+- extensible
+  - Thousands of plugins/extensions ("packages").
+  - Emacs is configured with a full programming language, can easily
+    add your own functions.
+
+Emacs has a long history, but nowadays the most widely used version is
+GNU Emacs.
+
+** Dispelling the CMSC216 myth
+If you attend the University of Maryland and take CMSC216, you will use Emacs.
+
+But it will be running on a (somewhat slow) shared server in a
+remote-desktop-like scenario.
+
+Running graphical programs over a network is slow and unresponsive.
+Emacs is comfortably fast when it is running on your computer.
+
+Also the version of Emacs installed on those servers is old.
+
+* Beginning our configuration
+** Emacs Lisp code
+#+begin_src elisp :tangle no
+<<initialize-package-manager>>
+#+end_src
+
+- semicolon (=;=) = Comment that continues until the end of the line.
+- ='package= = A "symbol". Human-readable constant. Can think of it
+  like an enum value.
+
+** Emacs Lisp code
 # TODO : This whole "Emacs Lisp code" section may be too long. We can
 # certainly breeze through it during the actual presentation and keep
 # it in the slides for reference, but it still may be overboard for
@@ -45,16 +92,7 @@ Translated to familiar syntax:
   }
 #+end_src
 
-* Emacs Lisp code
-#+begin_src elisp :tangle no
-<<initialize-package-manager>>
-#+end_src
-
-- semicolon (=;=) = Comment that continues until the end of the line.
-- ='package= = A "symbol". Human-readable constant. Can think of it
-  like an enum value.
-
-* Emacs Lisp code
+** Emacs Lisp code
 In a C-like language:
 
 #+begin_src elisp :tangle no
@@ -71,11 +109,11 @@ In Emacs Lisp:
 - All operators (like =+=) are called using function syntax, so the
   plus goes at the start (prefix) instead of in the middle (infix).
 
-* Setup the package manager
+** Setup the package manager
 Emacs has *many* features built-in, but we will want some third-party packages.
 Here, "packages" just means additional code for Emacs.
 
-You can generally think of them like plugins.
+You can generally think of them like plugins/extensions.
 
 #+name:initialize-package-manager
 #+begin_src elisp
@@ -87,7 +125,7 @@ You can generally think of them like plugins.
     (package-refresh-contents))
 #+end_src
 
-* Non-tangled :noexport:
+** Non-tangled :noexport:
 :PROPERTIES:
 :header-args: :tangle no
 :END:
@@ -99,7 +137,7 @@ You can generally think of them like plugins.
               ("elpa" . "https://elpa.gnu.org/packages/")))
 #+end_src
 
-* Packages archives
+** Package archives
 The =package-archives= variable specifies where to download packages from.
 
 - MELPA = Widely used third-party package repository.
@@ -110,7 +148,10 @@ The =package-archives= variable specifies where to download packages from.
   <<package-archives>>
 #+end_src
 
-* :noexport:
+** use-package
+We will be using =use-package=, a tool for declaratively specifying
+package configuration.
+
 #+begin_src elisp
   (unless (package-installed-p 'use-package)
     (package-install 'use-package))
@@ -119,8 +160,60 @@ The =package-archives= variable specifies where to download packages from.
   (setq use-package-always-ensure t)
 #+end_src
 
-* use-package
-We will be using =use-package=, a tool for declaratively specifying
-packages you want to use. Basically it makes it more convenient to
-install and configure packages.
 
+* (optional) Advanced Emacs
+** (optional) Advanced Emacs
+In this section, keep in mind that this is optional.
+
+There are many Emacs users out there who don't use any third-party
+packages, don't do much customization, or don't use advanced text
+editing features.
+
+** Advanced text editing
+** Adventures that await you, if you wish
+# TODO : Do we want to mention Doom, Spacemacs, or any other pre-made
+# configurations? If so, which subset of them do we want to mention?
+#
+# Jeff: Personally I have used Doom and found it to be pretty good, but
+# now I prefer a smaller custom configuration I can more easily
+# understand.
+- evil-mode: Emulates Vim keybindings.
+- org-mode
+  - "keeping notes, authoring documents, computational notebooks,
+    literate programming, maintaining to-do lists, planning projects",
+    spreadsheets
+  - This slideshow and the sample configuration we provide you were
+    both created from the same Org document.
+- [[https://magit.vc/][Magit]], the magical Git interface
+  - A high-quality interface for the Git version control system.
+
+** If you love Emacs so much, why don't you marry it?
+Here are just a few examples of things Emacs can do beyond editing text.
+
+- Shells / terminals: =M-x shell=, =eshell=, =term=, =ansi=term=
+  - [[https://www.masteringemacs.org/article/running-shells-in-emacs-overview][Running Shells and Terminal Emulators in Emacs]]
+- Email: [[https://www.gnus.org/][GNUS]], [[https://www.djcbsoftware.nl/code/mu/mu4e/index.html][mu4e]], and [[https://www.emacswiki.org/emacs/CategoryMail][more]]
+- Instant messaging client for Slack, IRC, Matrix, etc.
+
+* (extra) Other resources
+** Whet your appetite
+- [[https://emacsrocks.com/][Emacs Rocks!]]: Series of short videos demonstrating cool and useful
+  things you can do with Emacs.
+
+** Reference
+- [[https://www.gnu.org/software/emacs/manual/index.html][GNU Emacs manuals]]
+  - Also available inside of Emacs. =M-x info-emacs-manual= or =C-M-h r=
+- [[https://www.emacswiki.org/][EmacsWiki]]
+
+* (extra) Glossary
+** Keyboard shortcut notation
+=Ctrl+Alt+Shift+x=
+
+When talking about keyboard shortcuts, Emacs would write the above as =C-M-S-x=.
+
+'C' stands for control/ctrl.
+
+'M' stands for "meta". For historical reasons Emacs talks about a
+"meta" key. Nowadays this usually means "Alt".
+
+'S' stands for shift.
