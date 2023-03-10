@@ -1,33 +1,116 @@
-#+TITLE: Basic Emacs configuration
+#+TITLE: Introduction to the Emacs text editor
 #+PROPERTY: header-args :tangle init.el :noweb yes
 #+AUTHOR: Jeffrey Fisher; Skylar
-# #+beamer_theme: metropolis
+#+beamer_theme: metropolis
+
+# # Top level headings will be sections, 2nd level headings will be slides.
+# #+OPTIONS: H:2
+
+# Make code block font size smaller.
+#+LATEX_HEADER: \usepackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\scriptsize}
+
+* TODO:
+Before publishing this document, search for the keyword TODO, and make
+sure nothing shows up.
+
+* Meta rules for this document :noexport:
+** Emacs Lisp
+*** Avoid using quote where possible.
+Do not use quote for lists, use =(list)= instead if possible. =(list)=
+is hopefully more readable and approachable for people new to Lisp,
+which the majority of our audience likely will be.
+
+* Emacs Lisp code
+# TODO : This whole "Emacs Lisp code" section may be too long. We can
+# certainly breeze through it during the actual presentation and keep
+# it in the slides for reference, but it still may be overboard for
+# the purpose of this workshop.
+
+#+begin_src elisp :tangle no
+<<initialize-package-manager>>
+#+end_src
+
+Translated to familiar syntax:
+
+#+begin_src text :tangle no
+  import package
+
+  # Initialize package manager
+  package.archives = [["melpa", "https://melpa.org/packages/"],
+                      ["elpa", "https://elpa.gnu.org/packages/"]]
+  package.initialize()
+  if (not package.archive_contents) {
+     package.refresh_contents()
+  }
+#+end_src
+
+* Emacs Lisp code
+#+begin_src elisp :tangle no
+<<initialize-package-manager>>
+#+end_src
+
+- semicolon (=;=) = Comment that continues until the end of the line.
+- ='package= = A "symbol". Human-readable constant. Can think of it
+  like an enum value.
+
+* Emacs Lisp code
+In a C-like language:
+
+#+begin_src elisp :tangle no
+sqrt(1 + 2 + 3)
+#+end_src
+
+In Emacs Lisp:
+
+#+begin_src text :tangle no
+(sqrt (+ 1 2 3))
+#+end_src
+
+- Move the function name inside the parentheses.
+- All operators (like =+=) are called using function syntax, so the
+  plus goes at the start (prefix) instead of in the middle (infix).
 
 * Setup the package manager
 Emacs has *many* features built-in, but we will want some third-party packages.
 Here, "packages" just means additional code for Emacs.
+
 You can generally think of them like plugins.
 
+#+name:initialize-package-manager
+#+begin_src elisp
+  ;; Initialize package manager
+  (require 'package)
+  <<package-archives>>
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+#+end_src
+
+* Non-tangled :noexport:
+:PROPERTIES:
+:header-args: :tangle no
+:END:
+
+#+name: package-archives
+#+begin_src elisp
+  (setq package-archives
+        (list ("melpa" . "https://melpa.org/packages/")
+              ("elpa" . "https://elpa.gnu.org/packages/")))
+#+end_src
+
+* Packages archives
 The =package-archives= variable specifies where to download packages from.
 
 - MELPA = Widely used third-party package repository.
 - ELPA = Emacs Lisp Package Archive. This is the official Emacs
   package archive.
 
-#+begin_src elisp
-  ;; Initialize package manager
-  (require 'package)
-  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                           ("elpa" . "https://elpa.gnu.org/packages/")))
-  (package-initialize)
-  (unless package-archive-contents
-    (package-refresh-contents))
+#+begin_src elisp :tangle no
+  <<package-archives>>
 #+end_src
 
-We will be using =use-package=, a tool for declaratively specifying
-packages you want to use. Basically it makes it more convenient to
-install and configure packages.
-
+* :noexport:
 #+begin_src elisp
   (unless (package-installed-p 'use-package)
     (package-install 'use-package))
@@ -35,3 +118,9 @@ install and configure packages.
   ;; Download and install configured packages if they aren't already installed.
   (setq use-package-always-ensure t)
 #+end_src
+
+* use-package
+We will be using =use-package=, a tool for declaratively specifying
+packages you want to use. Basically it makes it more convenient to
+install and configure packages.
+
