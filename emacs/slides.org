@@ -10,6 +10,9 @@
 #+LATEX_HEADER: \usepackage{fancyvrb}
 #+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\scriptsize}
 
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \hypersetup{colorlinks,urlcolor=blue,linkcolor=blue}
+
 * TODO:
 Before publishing this document, search for the keyword TODO, and make
 sure nothing shows up.
