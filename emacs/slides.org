@@ -20,7 +20,6 @@ sure nothing shows up.
 ** TODO: Notation/terms glossary
 - Emacs keyboard shortcut notation
 
-** TODO: Make links in the PDF slide output more obvious with underline and color.
 * Meta rules for this document :noexport:
 ** Emacs Lisp
 *** Avoid using quote where possible.
