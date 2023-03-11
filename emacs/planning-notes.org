@@ -101,6 +101,8 @@ Having to press C-g to reverse direction of undo is annoying and confusing.
 =C-x C-;= : Maybe rebind this because of ibus issue on some Linuxes.
 
 Mention basic editing operations, especially code operations.
+
+*** ? Macros
 ** Other basic keys
 *** Window splitting management
 wind-move (or is it win-move?)

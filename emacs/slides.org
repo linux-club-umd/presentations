@@ -13,17 +13,66 @@
 #+LATEX_HEADER: \usepackage{hyperref}
 #+LATEX_HEADER: \hypersetup{colorlinks,urlcolor=blue,linkcolor=blue}
 
-* TODO:
+* TODO
 Before publishing this document, search for the keyword TODO, and make
 sure nothing shows up.
 
-** TODO: Notation/terms glossary
+** TODO Window management commands
+The defaults are not very mneumonic.
+
+Jeff: I need to look at windmove.
+
+** TODO What basics do we need to cover?
+Do we even need to cover "arrow keys move in the text"? I guess we could mention it.
+
+Jeff: As a short introduction at a hackathon I feel we should
+introduce interesting features instead of the basics. The basics of
+movement are best learned with sustained practice, and Emacs has a
+good tutorial for that already. Plus common shortcuts actually seem to
+be default, like Control plus arrow keys for movement by word.
+
+** TODO What to do for unfamiliar notation/terms?
+At least two options:
+1. Cover them upfront.
+   - Pro: Helpful for using Emacs themselves.
+2. Use familiar terminology, and mention that there is a glossary that
+   they can look at. Put the glossary in the Git repository or in the
+   slideshow.
+
+Jeff: Temporarily I am leaning towards covering them upfront. Will
+wait for feedback from Skylar. Also will see how much time it uses and
+confusion it creates.
+
+** TODO Display line numbers by default, or at least mention how to in the config.
+
+** TODO Notation/terms glossary
 - Emacs keyboard shortcut notation
 
+** TODO Goal: Reasonable language-specific setups
+We can't achieve perfect language-specific setups because it will
+depend on personal preference and there are a lot of languages.
+
+Jeff: Currently I am not using that many popular languages. My
+personal config doesn't have much language-specific config to pull
+from. All I can do is recommend modes for syntax-highlighting and
+Tuareg mode for OCaml.
+
+Jeff: If eglot LSP is reasonably easy to setup, then that'd be great.
+However I don't think installing the actual langauge servers easily is
+a solved problem. I haven't used LSP though so I don't actually know.
+
+** TODO Goal: Configuration results in an Emacs usable at a Notepad++ level
+Should paper over main annoyances that new users face.
+
+cua-mode does a lot here.
+
+** TODO Spellcheck this document.
+
+** TODO Should we enable pixel-scroll-mode in the config?
 * Meta rules for this document :noexport:
 ** Emacs Lisp
 *** Avoid using quote where possible.
-Do not use quote for lists, use =(list)= instead if possible. =(list)=
+hello o not use quote for lists, use =(list)= instead if possible. =(list)=
 is hopefully more readable and approachable for people new to Lisp,
 which the majority of our audience likely will be.
 ** Famliarity
@@ -40,8 +89,9 @@ Emacs is:
 
 - a text editor
 - customizable
-  - There are many settings available.
-- extensible
+  - There are many settings available without writing actual code, and
+    small changes require little code.
+- infinitely extensible
   - Thousands of plugins/extensions ("packages").
   - Emacs is configured with a full programming language, can easily
     add your own functions.
@@ -52,7 +102,7 @@ GNU Emacs.
 ** Dispelling the CMSC216 myth
 If you attend the University of Maryland and take CMSC216, you will use Emacs.
 
-But it will be running on a (somewhat slow) shared server in a
+But, it will be running on a (somewhat slow) shared server in a
 remote-desktop-like scenario.
 
 Running graphical programs over a network is slow and unresponsive.
@@ -60,6 +110,69 @@ Emacs is comfortably fast when it is running on your computer.
 
 Also the version of Emacs installed on those servers is old.
 
+** About this presentation
+Emacs is infinitely customizable. We can only cover a very small part
+of that infinity, and that part is biased by our experiences.
+
+At the end of the day this presentation is really about how we use
+Emacs and how we think you /might/ use Emacs.
+
+** What to expect from this presentation
+- Hopefully, with the base config and knowledge from this presentation
+  you can comfortably use Emacs at a basic level to edit code and
+  other text.
+- Learn how to get help from Emacs and external sources.
+- Basic knowledge of a few advanced Emacs features.
+- Awareness of interesting options to dive deeper, if you wish to do so.
+
+* Basic Emacs usage
+** First things first
+=C-g= key command quits the current action.
+
+- Make a mistake while typing a key command? =C-g= will quit the partially entered command.
+- Run a command that takes a while and want to stop it? =C-g=
+- Is there a prompt open that you want to close? =C-g=
+
+Note: =C-g= means =Control+g=, which means hold control/ctrl and press
+'g'. We will use the shorter form because it is what Emacs uses, to
+help you get accustomed to it.
+
+** Mess around in a buffer
+Create a new buffer.
+1. =C-x b=
+   - This means =Control+x b=, which means:
+     1. Hold the Control/Ctrl key and press 'x'.
+     2. Release the control key.
+     3. Press 'b'.
+2. At the bottom of your Emacs window there should be a prompt "Switch
+   to buffer", with your cursor at the end so that you can type.
+3. Type a name for the buffer, such as "new", then press enter.
+
+You should now be in a blank buffer.
+
+Notepad-level stuff works. Type stuff, backspace, arrow keys,
+selecting text and moving with the mouse.
+
+** Hold up
+- Buffer = A place where text is stored that you can edit.
+  - When you open a file it is loaded into a buffer. When you "save a
+    file", the contents of the buffer are written to the file.
+
+Emacs is definitely keyboard-focused, but it has pretty good mouse
+support.
+
+Learning new shortcuts is hard. The menu bar at the top of the screen
+has many common commands, and will also tell you the keyboard
+shortcut.
+
+** Opening files
+# TODO : Best way to explain this one? New programmers may not have
+# worked with file paths yet, and I don't know if Emacs can or should
+# open the system file dialog. Maybe could teach using Dired?
+
+** Viewing multiple buffers at the same time
+
+* Getting help
 * Beginning our configuration
 ** Emacs Lisp code
 #+begin_src elisp :tangle no
@@ -201,15 +314,19 @@ Follow "Common User Access" conventions.
     (cua-mode))
 #+end_src
 
-* (optional) Advanced Emacs
-** (optional) Advanced Emacs
+* Advanced Emacs
+** Advanced Emacs
 In this section, keep in mind that this is optional.
 
 There are many Emacs users out there who don't use any third-party
 packages, don't do much customization, or don't use advanced text
 editing features.
 
+** Useful features
+
 ** Advanced text editing
+
+* (optional) Adventures
 ** Adventures that await you, if you wish
 # TODO : Do we want to mention Doom, Spacemacs, or any other pre-made
 # configurations? If so, which subset of them do we want to mention?
@@ -217,8 +334,10 @@ editing features.
 # Jeff: Personally I have used Doom and found it to be pretty good, but
 # now I prefer a smaller custom configuration I can more easily
 # understand.
+- TRAMP : Transparent Remote (file) Access, Multiple Protocol
+  - Similar to VS Code's Remote SSH plugin.
 - evil-mode: Emulates Vim keybindings.
-- org-mode
+- [[https://orgmode.org/][org-mode]]
   - "keeping notes, authoring documents, computational notebooks,
     literate programming, maintaining to-do lists, planning projects",
     spreadsheets
@@ -235,10 +354,19 @@ Here are just a few examples of things Emacs can do beyond editing text.
 - Email: [[https://www.gnus.org/][GNUS]], [[https://www.djcbsoftware.nl/code/mu/mu4e/index.html][mu4e]], and [[https://www.emacswiki.org/emacs/CategoryMail][more]]
 - Instant messaging client for Slack, IRC, Matrix, etc.
 
+* (extra) Plain fun
+** Plain fun
+- artist-mode lets you draw text-based art.
+- =M-x strokes-help= : Control Emacs with mouse gestures.
+- =M-x follow-mode= : Enable this and open multiple copies of a buffer
+  side-by-side with =C-x 3= to read a buffer across multiple columns.
+
 * (extra) Other resources
 ** Whet your appetite
 - [[https://emacsrocks.com/][Emacs Rocks!]]: Series of short videos demonstrating cool and useful
   things you can do with Emacs.
+- [[https://karthinks.com/software/batteries-included-with-emacs/][Batteries included with Emacs]] : Underrated built-in features.
+  - [[https://karthinks.com/software/more-batteries-included-with-emacs/][More batteries included with Emacs]]
 
 ** Reference
 - [[https://www.gnu.org/software/emacs/manual/index.html][GNU Emacs manuals]]
