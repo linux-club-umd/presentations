@@ -17,6 +17,9 @@
 Before publishing this document, search for the keyword TODO, and make
 sure nothing shows up.
 
+** TODO Configure a file tree sidebar
+Many people like it, popular in other code editors.
+
 ** TODO Window management commands
 The defaults are not very mneumonic.
 
