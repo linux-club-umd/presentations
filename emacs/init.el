@@ -1,8 +1,11 @@
 ;; Initialize package manager
 (require 'package)
 (setq package-archives
-      (list ("melpa" . "https://melpa.org/packages/")
-            ("elpa" . "https://elpa.gnu.org/packages/")))
+      (list ("gnu" . "https://elpa.gnu.org/packages/")
+	    ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+	    ("melpa" . "https://melpa.org/packages/")))
+;; Emacs 28+ includes gnu and nongnu by default, so this can be shortened to one line:
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
