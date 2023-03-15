@@ -1,10 +1,11 @@
 ;; Initialize package manager
 (require 'package)
-(setq package-archives
-      (list ("gnu" . "https://elpa.gnu.org/packages/")
-            ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-            ("melpa" . "https://melpa.org/packages/")
-            ))
+;; (setq package-archives
+;;       (list ("gnu" . "https://elpa.gnu.org/packages/")
+;; 	    ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+;; 	    ("melpa" . "https://melpa.org/packages/")))
+;; Emacs 28+ includes gnu and nongnu by default, so this can be shortened to one line:
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -14,29 +15,10 @@
 (require 'use-package)
 ;; Download and install configured packages if they aren't already installed.
 (setq use-package-always-ensure t)
-
-(use-package ef-themes)
-;; A nice dark theme. 'modus-operandi' is the light theme version.
-;; You can change the theme while Emacs is running with `M-x load-theme`.
-(load-theme 'modus-vivendi)
-
-(use-package cua-base
-  :custom
-  (cua-keep-region-after-copy t)
-  :init
-  (cua-mode))
-
-;; Save changes made with Emacs' Customize system to a different file,
-;; so that there isn't strange code added to your init.el file.
-;; Then, load this file to load customizations.
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
-
 ;; Record startup times of packages, useful for debugging
 (setq use-package-compute-statistics t)
 ;; Emacs 28+ includes native compilation. If you get annoyed by the errors, uncomment the below line to log warnings without popping up the *Warnings* buffer.
-; (native-comp-async-report-warnings-errors 'silent)
+;; (native-comp-async-report-warnings-errors 'silent)
 
 ;; enable keybind support
 ;; you can run `M-x describe-personal-keybindings` to list custom keys'
@@ -114,7 +96,7 @@
 (use-package expand-region
   ;; expand/contract selection from words/characters
   :bind (("C-=" . er/expand-region)
-         ("C--" . er/contract-region)))
+	 ("C--" . er/contract-region)))
 
 (use-package orderless
   ;; completion style that matches patterns in any order
@@ -139,9 +121,9 @@
   ;; very customizable, here we override some default keys
   ;; you can uncomment them if you like, commands are accessible via `M-x`
   :bind (("C-x b" . consult-buffer)
-         ("M-y" . consult-yank-pop)
-         ("M-g g" . consult-goto-line)
-         ("M-g M-g" . consult-goto-line)))
+	 ("M-y" . consult-yank-pop)
+	 ("M-g g" . consult-goto-line)
+	 ("M-g M-g" . consult-goto-line)))
 
 ;; icons!
 (use-package all-the-icons)
@@ -209,10 +191,10 @@
   ;; Use TAB for cycling, default is `corfu-complete'.
   :bind
   (:map corfu-map
-        ("TAB" . corfu-next)
-        ([tab] . corfu-next)
-        ("S-TAB" . corfu-previous)
-        ([backtab] . corfu-previous))
+	("TAB" . corfu-next)
+	([tab] . corfu-next)
+	("S-TAB" . corfu-previous)
+	([backtab] . corfu-previous))
   :init
   (global-corfu-mode))
 
