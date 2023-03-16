@@ -10,7 +10,13 @@ colortheme: "metropolis"
 ## Presenters
 ## What this presentation is
 
-We intend for you to come out of this presentation with
+We intend that after this presentation you:
+
+- Know what permissions popular licenses grant you
+- Have a good idea of what licenses you may want to use for your
+  projects
+- (maybe) Have some understanding of the issues if you want to make
+  money from open-source work
 
 ## What this presentation is **not**
 
@@ -27,6 +33,13 @@ should probably consult a lawyer.
 
 ## Free and Open Source Software (FOSS)
 <!-- TODO: Define proprietary as well, maybe put it here. -->
+<!-- TODO: Maybe have something about the history here, if it doesn't take up too much time. -->
+
+The free software movement and the open-source software movement are
+separate.
+
+Most licenses that fit the free software definition also fit the
+open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSoftware]
 
 ## Copyright, works, licenses, oh my!
 
@@ -41,3 +54,7 @@ should probably consult a lawyer.
 ## Dependencies and using other people's code
 # Non-FOSS licenses
 # Practical and economic considerations
+# Bibliography
+
+::: {#refs}
+:::
