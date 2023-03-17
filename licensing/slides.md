@@ -177,7 +177,6 @@ Ethical source licenses have provisions that restrict uses for ethical purposes.
 - If you need a legally-contentious or custom license, consult a lawyer
 - Now you know the basics of software licensing
 
->>>>>>> e152504a0e882c0d9fe29728065da6b99b678259
 # Bibliography
 
 ::: {#refs}
