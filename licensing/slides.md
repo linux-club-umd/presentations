@@ -3,6 +3,7 @@ title: "Licensing: How to open-source your work"
 author:
 - Jeffrey Fisher
 - Skylar
+- John Evans
 colortheme: "metropolis"
 ...
 
@@ -46,14 +47,37 @@ open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSof
 # Just stick it online, right?
 # Permissive licenses
 # Copyleft licenses
+
 # Licenses for non-software works
+
+Home 3D printing has made sharing 3D models common practice.
+
+Similar to source code files, 3D model files can be considered creative works, and can be
+licensed as such.
+
+Note: This does not mean that the design or the physical prints are protected. Patents 
+would be required for that.
+
 # Working with others and in a community
 
 ## Making a new project
 ## Contributing to an existing project
 ## Dependencies and using other people's code
+
 # Non-FOSS licenses
+
+## Creative Commons
+
+In recent years, the Creative Commons family of licenses have become popular.
+
+3D printing repository websites such as Thingiverse and Printables have these licenses 
+available for users to select from when uploading their designs.
+
+While it is not well explained on these sites, the Non-Commercial versions of these licenses 
+are not free or open source. [@CCLicensesOpen]
+
 # Practical and economic considerations
+
 # Bibliography
 
 ::: {#refs}
