@@ -8,4 +8,8 @@ references:
     title: "Creative Commons 4.0 BY and BY-SA licenses approved conformant with the Open Definition"
     URL: "https://creativecommons.org/2013/12/27/creative-commons-4-0-by-and-by-sa-licenses-approved-conformant-with-the-open-definition/"
     publisher: "Creative Commons"
+  - id: "ChooseALicense"
+    title: "Choose an open source license"
+    URL: "https://choosealicense.com/"
+    publisher: "GitHub, Inc."
 ...
