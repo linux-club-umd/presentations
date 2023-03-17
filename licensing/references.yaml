@@ -4,4 +4,8 @@ references:
     title: "Categories of Free and Nonfree Software"
     URL: "https://www.gnu.org/philosophy/categories.html"
     publisher: "Free Software Foundation"
+  - id: "ChooseALicense"
+    title: "Choose an open source license"
+    URL: "https://choosealicense.com/"
+    publisher: "GitHub, Inc."
 ...

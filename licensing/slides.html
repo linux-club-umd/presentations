@@ -450,26 +450,97 @@ Free and Nonfree Software,”</span> n.d.)</span></p>
 <section id="copyright-works-licenses-oh-my" class="slide level2">
 <h2>Copyright, works, licenses, oh my!</h2>
 </section></section>
-<section id="just-stick-it-online-right" class="title-slide slide level1">
-<h1>Just stick it online, right?</h1>
-
+<section>
+<section id="no-license" class="title-slide slide level1">
+<h1>No License</h1>
+<p>Just stick it online, right?</p>
 </section>
-
+<section id="no-license-all-rights-reserved" class="slide level2">
+<h2>No license = All rights reserved</h2>
+<blockquote>
+<p>When you make a creative work (which includes code), the work is
+under exclusive copyright by default. Unless you include a license that
+specifies otherwise, nobody else can copy, distribute, or modify your
+work without being at risk of take-downs, shake-downs, or litigation.
+Once the work has other contributors (each a copyright holder), “nobody”
+starts including you. (choosealicense)</p>
+</blockquote>
+<ul>
+<li>If you are the only user, this is probably fine</li>
+<li>If you want other people to reuse and share your work, this is
+probably not what you want: pick a license to specify your terms more
+clearly</li>
+</ul>
+</section></section>
+<section>
 <section id="permissive-licenses" class="title-slide slide level1">
 <h1>Permissive licenses</h1>
 
 </section>
-
+<section id="i-want-it-simple-and-permissive" class="slide level2">
+<h2>I want it simple and permissive</h2>
+<blockquote>
+<p>Permissive licenses let people do almost anything they want with your
+project, like making and distributing closed source versions.
+(choosealicense)</p>
+</blockquote>
+<ul>
+<li>Includes public domain (there is no copyright owner)</li>
+<li>Easier to use and distribute</li>
+<li>Harder to retain control and share improvements</li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>MIT, BSD, Apache</li>
+<li>Chromium, Apache Web Server</li>
+</ul>
+</section></section>
+<section>
 <section id="copyleft-licenses" class="title-slide slide level1">
 <h1>Copyleft licenses</h1>
 
 </section>
-
+<section id="i-care-about-sharing-improvements" class="slide level2">
+<h2>I care about sharing improvements</h2>
+<blockquote>
+<p>Copyleft licenses lets people do almost anything they want with your
+project, /except/ distributing closed source versions.
+(choosealicense)</p>
+</blockquote>
+<ul>
+<li>Changes must redistributed with a copyleft license and with source
+code</li>
+<li>Harder to use and distribute</li>
+<li>Easier to retain control and share improvements</li>
+</ul>
+</section>
+<section id="examples-1" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>GPL, AGPL, LGPL (variants for linking code and sharing it over
+server applications)</li>
+<li>Linux, Bash, Emacs</li>
+</ul>
+</section></section>
+<section>
 <section id="licenses-for-non-software-works" class="title-slide slide level1">
 <h1>Licenses for non-software works</h1>
 
 </section>
-
+<section id="creative-commons" class="slide level2">
+<h2>Creative Commons</h2>
+<ul>
+<li>CC0 = public domain</li>
+<li>CC-BY = attribution (like MIT)</li>
+<li>CC-BY-SA = share alike (like GPL)</li>
+</ul>
+</section>
+<section id="hardware" class="slide level2">
+<h2>Hardware</h2>
+<p>TODO</p>
+</section></section>
 <section>
 <section id="working-with-others-and-in-a-community" class="title-slide slide level1">
 <h1>Working with others and in a community</h1>
@@ -477,21 +548,106 @@ Free and Nonfree Software,”</span> n.d.)</span></p>
 </section>
 <section id="making-a-new-project" class="slide level2">
 <h2>Making a new project</h2>
+<ul>
+<li>Your license conveys to the community how you intend your project to
+be used and shared</li>
+</ul>
 </section>
 <section id="contributing-to-an-existing-project" class="slide level2">
 <h2>Contributing to an existing project</h2>
+<ul>
+<li>Review the license</li>
+<li>Check for contributor agreements:
+<ul>
+<li>GNU Emacs: Contributing to Emacs itself or the official package
+repository (ELPA) requires you to assign your copyright to the FSF.</li>
+<li>Developer Certificate of Origin (DCO): Contributing to the Linux
+kernel requires signing this. In brief, the certificate verifies that
+the user wrote the open-source changes and allows the project to use
+them in a way consistent with the license.
+https://developercertificate.org/</li>
+<li>Contributor License Agreement (CLA): Can be very restrictive. CLAs
+typically allow the owner of the project (typically a foundation or a
+company) to relicense your patches. CLAs are controversial because if
+the company makes the project proprietary, you no longer own the
+open-source code that you contributed. The company does. This has
+spoiled the relationship between a few communities already.</li>
+</ul></li>
+</ul>
 </section>
 <section id="dependencies-and-using-other-peoples-code" class="slide level2">
 <h2>Dependencies and using other people’s code</h2>
+<ul>
+<li>License compatability: your code should respect the licenses of code
+you depend on</li>
+<li>Rule of thumb:
+<ul>
+<li>copyleft code can only be reused in copyleft code</li>
+<li>permissive code can be reused almost anywhere</li>
+<li>proprietary code may have restrictions (frequently
+noncommercial)</li>
+</ul></li>
+</ul>
+<p>You can check the licenses of your code’s dependencies for various
+languages:</p>
+<ul>
+<li><a href="https://github.com/EmbarkStudios/cargo-about">Rust</a></li>
+<li><a href="https://pypi.org/project/pip-licenses/">Python</a></li>
+<li><a href="https://www.npmjs.com/package/license-checker">Javascript</a></li>
+</ul>
 </section></section>
+<section>
 <section id="non-foss-licenses" class="title-slide slide level1">
 <h1>Non-FOSS licenses</h1>
-
+<p>Just because you can look at the code doesn’t mean it’s FOSS</p>
 </section>
-
+<section id="proprietary-licenses" class="slide level2">
+<h2>Proprietary licenses</h2>
+<ul>
+<li>Leaked/reverse-assembled proprietary code is still proprietary</li>
+</ul>
+</section>
+<section id="source-available-licenses" class="slide level2">
+<h2>Source-available licenses</h2>
+<p>An important requirement of FOSS is that it can be used for
+commercial purposes.</p>
+<ul>
+<li>Business Source License (“permissive”)
+<ul>
+<li>Releases are source available with a promise to open-source it
+later</li>
+<li>QT, MariaDB, Codon</li>
+</ul></li>
+<li>Server Side Public License (“copyleft”)
+<ul>
+<li>Copyleft extends much farther than the AGPL</li>
+<li>Withdrawn from consideration to the Open-Source Initiative:
+restricts the right to make use of the program for any purpose</li>
+</ul></li>
+</ul>
+</section>
+<section id="ethical-source-license" class="slide level2">
+<h2>Ethical-source license</h2>
+<p>An important requirement of FOSS is that it can be used for any
+purpose.</p>
+<p>Ethical source licenses have provisions that restrict uses for
+ethical purposes.</p>
+<ul>
+<li>JSON license: “The Software shall be used for Good, not Evil.”
+<ul>
+<li>But what counts as an “ethical” usage?</li>
+<li>Maybe unenforceable</li>
+</ul></li>
+</ul>
+</section></section>
 <section id="practical-and-economic-considerations" class="title-slide slide level1">
 <h1>Practical and economic considerations</h1>
-
+<ul>
+<li>Whatever license you pick, consider the community</li>
+<li>If you need a legally-contentious or custom license, consult a
+lawyer</li>
+<li>Now you know the basics of software licensing</li>
+</ul>
 </section>
 
 <section id="bibliography" class="title-slide slide level1">
