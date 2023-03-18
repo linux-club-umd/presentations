@@ -32,6 +32,13 @@ when something is not well-understood. We cite our sources. If you
 want to use a custom or less-understood license, you should probably consult a lawyer.
 
 # Terminology
+## Copyright, works, licenses, oh my!
+
+- Work = Noun. As in "a work of art".
+- Copyright notice = Statement of who owns the copyright for something. Example: "Copyright © 2012 Jane Doe"
+  - Include year of first publication.
+  - A year range may be included for works that are frequently updated: "Copyright © 2000-2004 Jane Doe"
+- License = Agreement that grants permissions, possibly with some restrictions.
 
 ## Free and Open Source Software (FOSS)
 <!-- TODO: Define proprietary as well, maybe put it here. -->
@@ -43,8 +50,6 @@ separate but closely related.
 Most licenses that fit the free software definition also fit the
 open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSoftware]
 
-## Copyright, works, licenses, oh my!
-
 # Just stick it online, right?
 
 ## No license = All rights reserved
@@ -52,6 +57,9 @@ open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSof
 > When you make a creative work (which includes code), the work is under exclusive copyright by default. Unless you include a license that specifies otherwise, nobody else can copy, distribute, or modify your work without being at risk of take-downs, shake-downs, or litigation. Once the work has other contributors (each a copyright holder), “nobody” starts including you. [@ChooseALicense]
 
 - If you are the only user, this is probably fine
+- It's not required, but it's a good idea to put a
+  copyright notice and statement of "all rights reserved" in an
+  easy-to-find place like a file named README.
 - If you want other people to reuse and share your work, this is probably not what you want
 - Choose a license to specify your terms more clearly
 
