@@ -145,9 +145,9 @@ You can check the licenses of your code's dependencies for various languages:
 
 # Non-FOSS licenses
 
-<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
-
 ## Proprietary licenses
+
+<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 
 An important requirement of FOSS is that it can be used for any purpose (commercial or otherwise).
 
@@ -188,6 +188,8 @@ Ethical source licenses have provisions that restrict uses for ethical purposes.
 - Now you know the basics of software licensing
 
 # Bibliography
+
+## Bibliography
 
 ::: {#refs}
 :::
