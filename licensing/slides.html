@@ -407,7 +407,7 @@ background-color: var(--r-background-color);
 
 <section class="slide level2">
 
-<p>; -<em>- mode: Markdown;-</em>-</p>
+<!-- -*- mode: Markdown;-*- -->
 </section>
 <section>
 <section id="introduction" class="title-slide slide level1">
@@ -517,8 +517,14 @@ project, /except/ distributing closed source versions. <span class="citation" da
 Source License,”</span> n.d.)</span></p>
 </blockquote>
 <ul>
-<li>Changes must redistributed under a copyleft license and with source
-code</li>
+<li>Changes must be redistributed with a copyleft license and with
+source code</li>
+<li>Some copyleft licenses (GPL) may be incompatible with proprietary
+code <!--  TODO: Confirm with source. Elaborate or clarify. -->
+<ul>
+<li>LGPL probably doesn’t have these problems</li>
+</ul></li>
+<li>Easier to retain control and share improvements</li>
 </ul>
 </section>
 <section id="examples-1" class="slide level2">
@@ -607,8 +613,8 @@ caution.</li>
 <section id="dependencies-and-using-other-peoples-code" class="slide level2">
 <h2>Dependencies and using other people’s code</h2>
 <ul>
-<li>License compatability: your code should respect the licenses of code
-you depend on</li>
+<li>License compatability: you must comply with the licenses of code you
+depend on</li>
 <li>Rule of thumb:
 <ul>
 <li>copyleft code can only be reused in copyleft code</li>

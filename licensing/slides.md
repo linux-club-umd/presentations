@@ -1,4 +1,4 @@
-; -*- mode: Markdown;-*-
+<!-- -*- mode: Markdown;-*- -->
 
 ---
 title: "Licensing: How to open-source your work"
