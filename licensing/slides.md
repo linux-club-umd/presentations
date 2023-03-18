@@ -3,9 +3,9 @@
 ---
 title: "Licensing: How to open-source your work"
 author:
-- Jeffrey Fisher
 - Skylar
 - John Evans
+- Jeffrey Fisher
 colortheme: "metropolis"
 ...
 
