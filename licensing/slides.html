@@ -54,12 +54,11 @@ margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-
 div.csl-bib-body { }
 div.csl-entry {
 clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
 margin-left:2em;
 text-indent:-2em;
 }
@@ -73,7 +72,8 @@ padding-left:1em;
 }
 div.csl-indent {
 margin-left: 2em;
-} </style>
+}
+</style>
   <style type="text/css">
 @font-face {
 font-family: 'Source Sans Pro';
@@ -405,6 +405,10 @@ background-color: var(--r-background-color);
   <p class="author">John Evans</p>
 </section>
 
+<section class="slide level2">
+
+<p>; -<em>- mode: Markdown;-</em>-</p>
+</section>
 <section>
 <section id="introduction" class="title-slide slide level1">
 <h1>Introduction</h1>
@@ -431,8 +435,8 @@ pros and cons of particular choices. Also, this presentation is focused
 on free and open-source licenses.</p>
 <p>We are not lawyers. We focus on well-understood truths, or point out
 when something is not well-understood. We cite our sources. If you want
-custom license terms or to use less well-understood licenses, you should
-probably consult a lawyer.</p>
+to use a custom or less-understood license, you should probably consult
+a lawyer.</p>
 </section></section>
 <section>
 <section id="terminology" class="title-slide slide level1">
@@ -444,7 +448,7 @@ probably consult a lawyer.</p>
 <!-- TODO: Define proprietary as well, maybe put it here. -->
 <!-- TODO: Maybe have something about the history here, if it doesn't take up too much time. -->
 <p>The free software movement and the open-source software movement are
-separate.</p>
+separate but closely related.</p>
 <p>Most licenses that fit the free software definition also fit the
 open-source software definition, and vice versa. <span class="citation" data-cites="CategoriesOfFreeAndNonfreeSoftware">(<span>“Categories of
 Free and Nonfree Software,”</span> n.d.)</span></p>
@@ -453,9 +457,9 @@ Free and Nonfree Software,”</span> n.d.)</span></p>
 <h2>Copyright, works, licenses, oh my!</h2>
 </section></section>
 <section>
-<section id="no-license" class="title-slide slide level1">
-<h1>No License</h1>
-<p>Just stick it online, right?</p>
+<section id="just-stick-it-online-right" class="title-slide slide level1">
+<h1>Just stick it online, right?</h1>
+
 </section>
 <section id="no-license-all-rights-reserved" class="slide level2">
 <h2>No license = All rights reserved</h2>
@@ -465,13 +469,14 @@ under exclusive copyright by default. Unless you include a license that
 specifies otherwise, nobody else can copy, distribute, or modify your
 work without being at risk of take-downs, shake-downs, or litigation.
 Once the work has other contributors (each a copyright holder), “nobody”
-starts including you. (choosealicense)</p>
+starts including you. <span class="citation" data-cites="ChooseALicense">(<span>“Choose an Open Source
+License,”</span> n.d.)</span></p>
 </blockquote>
 <ul>
 <li>If you are the only user, this is probably fine</li>
 <li>If you want other people to reuse and share your work, this is
-probably not what you want: pick a license to specify your terms more
-clearly</li>
+probably not what you want</li>
+<li>Choose a license to specify your terms more clearly</li>
 </ul>
 </section></section>
 <section>
@@ -483,20 +488,20 @@ clearly</li>
 <h2>I want it simple and permissive</h2>
 <blockquote>
 <p>Permissive licenses let people do almost anything they want with your
-project, like making and distributing closed source versions.
-(choosealicense)</p>
+project, like making and distributing closed source versions. <span class="citation" data-cites="ChooseALicense">(<span>“Choose an Open
+Source License,”</span> n.d.)</span></p>
 </blockquote>
 <ul>
 <li>Includes public domain (there is no copyright owner)</li>
-<li>Easier to use and distribute</li>
-<li>Harder to retain control and share improvements</li>
 </ul>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
 <ul>
-<li>MIT, BSD, Apache</li>
-<li>Chromium, Apache Web Server</li>
+<li>MIT: <a href="https://github.com/nodejs/node/blob/main/LICENSE">NodeJS</a></li>
+<li>BSD: <a href="https://github.com/scikit-learn/scikit-learn/blob/main/COPYING">scikit-learn</a></li>
+<li>Apache: <a href="https://github.com/Qiskit/qiskit/blob/master/LICENSE.txt">Qiskit</a></li>
+<li>Unlicense: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE">yt-dlp</a></li>
 </ul>
 </section></section>
 <section>
@@ -508,22 +513,29 @@ project, like making and distributing closed source versions.
 <h2>I care about sharing improvements</h2>
 <blockquote>
 <p>Copyleft licenses lets people do almost anything they want with your
-project, /except/ distributing closed source versions.
-(choosealicense)</p>
+project, /except/ distributing closed source versions. <span class="citation" data-cites="ChooseALicense">(<span>“Choose an Open
+Source License,”</span> n.d.)</span></p>
 </blockquote>
 <ul>
-<li>Changes must redistributed with a copyleft license and with source
+<li>Changes must redistributed under a copyleft license and with source
 code</li>
-<li>Harder to use and distribute</li>
-<li>Easier to retain control and share improvements</li>
 </ul>
 </section>
 <section id="examples-1" class="slide level2">
 <h2>Examples</h2>
 <ul>
-<li>GPL, AGPL, LGPL (variants for linking code and sharing it over
-server applications)</li>
-<li>Linux, Bash, Emacs</li>
+<li>GPLv2: <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING">Linux
+kernel</a></li>
+<li>GPLv3: <a href="https://github.com/facebookresearch/llama/blob/main/LICENSE">LLaMA</a>
+<ul>
+<li>provides additional clarifications on license compatibility, digital
+rights management, and patents</li>
+</ul></li>
+<li>AGPL: <a href="https://github.com/rstudio/rstudio/blob/main/COPYING">RStudio</a>
+<ul>
+<li>requires servers hosting the code to release their</li>
+</ul></li>
+<li>LGPL: TODO (many low-level libraries)</li>
 </ul>
 </section></section>
 <section>
@@ -560,27 +572,35 @@ protected. Patents would be required for that.</p>
 <ul>
 <li>Your license conveys to the community how you intend your project to
 be used and shared</li>
+<li>Permissive licenses are easier to use and distribute, but harder to
+retain control and share improvements</li>
+<li>Copyleft licenses are harder to use and distribute, but easier to
+retain control and share improvements</li>
 </ul>
 </section>
 <section id="contributing-to-an-existing-project" class="slide level2">
 <h2>Contributing to an existing project</h2>
+<!-- TODO: slim down -->
 <ul>
 <li>Review the license</li>
-<li>Check for contributor agreements:
+<li>Read the contributor agreements, if there are any:
 <ul>
 <li>GNU Emacs: Contributing to Emacs itself or the official package
-repository (ELPA) requires you to assign your copyright to the FSF.</li>
+repository (ELPA) requires you to assign your copyright to the FSF.
+Emacs is GPLv3 licensed so this is reasonable.</li>
 <li>Developer Certificate of Origin (DCO): Contributing to the Linux
 kernel requires signing this. In brief, the certificate verifies that
-the user wrote the open-source changes and allows the project to use
-them in a way consistent with the license.
+the developer wrote the open-source changes and allows the project to
+use them in a way consistent with the license. This is reasonable
+because the developer owns their changes to the project.
 https://developercertificate.org/</li>
-<li>Contributor License Agreement (CLA): Can be very restrictive. CLAs
-typically allow the owner of the project (typically a foundation or a
-company) to relicense your patches. CLAs are controversial because if
-the company makes the project proprietary, you no longer own the
-open-source code that you contributed. The company does. This has
-spoiled the relationship between a few communities already.</li>
+<li>Contributor License Agreement (CLA): Refers to a restrictive class
+of agreements that might allow the owner of the project (usually a
+foundation or a company) to relicense your patches. Controversial
+because if the company makes the project proprietary, developers no
+longer own the open-source code that they contributed. The company does.
+This is contentious among some communities so contribute to these with
+caution.</li>
 </ul></li>
 </ul>
 </section>
@@ -608,18 +628,19 @@ languages:</p>
 <section>
 <section id="non-foss-licenses" class="title-slide slide level1">
 <h1>Non-FOSS licenses</h1>
-<p>Just because you can look at the code doesn’t mean it’s FOSS</p>
+<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 </section>
 <section id="proprietary-licenses" class="slide level2">
 <h2>Proprietary licenses</h2>
+<p>An important requirement of FOSS is that it can be used for any
+purpose (commercial or otherwise).</p>
 <ul>
+<li>Just because you can look at the code doesn’t mean it’s FOSS</li>
 <li>Leaked/reverse-assembled proprietary code is still proprietary</li>
 </ul>
 </section>
 <section id="source-available-licenses" class="slide level2">
 <h2>Source-available licenses</h2>
-<p>An important requirement of FOSS is that it can be used for
-commercial purposes.</p>
 <ul>
 <li>Business Source License (“permissive”)
 <ul>
@@ -635,8 +656,8 @@ restricts the right to make use of the program for any purpose</li>
 </ul></li>
 </ul>
 </section>
-<section id="creative-commons-1" class="slide level2">
-<h2>Creative Commons</h2>
+<section id="noncommercial-creative-commons-licenses" class="slide level2">
+<h2>Noncommercial Creative Commons licenses</h2>
 <p>In recent years, the Creative Commons family of licenses have become
 popular.</p>
 <p>3D printing repository websites such as Thingiverse and Printables
@@ -649,14 +670,12 @@ Definition,”</span> n.d.)</span></p>
 </section>
 <section id="ethical-source-license" class="slide level2">
 <h2>Ethical-source license</h2>
-<p>An important requirement of FOSS is that it can be used for any
-purpose.</p>
 <p>Ethical source licenses have provisions that restrict uses for
 ethical purposes.</p>
 <ul>
 <li>JSON license: “The Software shall be used for Good, not Evil.”
 <ul>
-<li>But what counts as an “ethical” usage?</li>
+<li>What counts as an “ethical” usage?</li>
 <li>Maybe unenforceable</li>
 </ul></li>
 </ul>
@@ -673,12 +692,15 @@ lawyer</li>
 
 <section id="bibliography" class="title-slide slide level1">
 <h1>Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-CategoriesOfFreeAndNonfreeSoftware" class="csl-entry" role="listitem">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-CategoriesOfFreeAndNonfreeSoftware" class="csl-entry" role="doc-biblioentry">
 <span>“Categories of Free and Nonfree Software.”</span> n.d. Free
 Software Foundation. <a href="https://www.gnu.org/philosophy/categories.html">https://www.gnu.org/philosophy/categories.html</a>.
 </div>
-<div id="ref-CCLicensesOpen" class="csl-entry" role="listitem">
+<div id="ref-ChooseALicense" class="csl-entry" role="doc-biblioentry">
+<span>“Choose an Open Source License.”</span> n.d. GitHub, Inc. <a href="https://choosealicense.com/">https://choosealicense.com/</a>.
+</div>
+<div id="ref-CCLicensesOpen" class="csl-entry" role="doc-biblioentry">
 <span>“Creative Commons 4.0 BY and BY-SA Licenses Approved Conformant
 with the Open Definition.”</span> n.d. Creative Commons. <a href="https://creativecommons.org/2013/12/27/creative-commons-4-0-by-and-by-sa-licenses-approved-conformant-with-the-open-definition/">https://creativecommons.org/2013/12/27/creative-commons-4-0-by-and-by-sa-licenses-approved-conformant-with-the-open-definition/</a>.
 </div>
