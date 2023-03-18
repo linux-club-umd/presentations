@@ -1,3 +1,5 @@
+; -*- mode: Markdown;-*-
+
 ---
 title: "Licensing: How to open-source your work"
 author:
@@ -27,8 +29,7 @@ focused on free and open-source licenses.
 
 We are not lawyers. We focus on well-understood truths, or point out
 when something is not well-understood. We cite our sources. If you
-want custom license terms or to use less well-understood licenses, you
-should probably consult a lawyer.
+want to use a custom or less-understood license, you should probably consult a lawyer.
 
 # Terminology
 
@@ -37,44 +38,43 @@ should probably consult a lawyer.
 <!-- TODO: Maybe have something about the history here, if it doesn't take up too much time. -->
 
 The free software movement and the open-source software movement are
-separate.
+separate but closely related.
 
 Most licenses that fit the free software definition also fit the
 open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSoftware]
 
 ## Copyright, works, licenses, oh my!
 
-# No License
-
-Just stick it online, right?
+# Just stick it online, right?
 
 ## No license = All rights reserved
 
-> When you make a creative work (which includes code), the work is under exclusive copyright by default. Unless you include a license that specifies otherwise, nobody else can copy, distribute, or modify your work without being at risk of take-downs, shake-downs, or litigation. Once the work has other contributors (each a copyright holder), “nobody” starts including you. (choosealicense)
+> When you make a creative work (which includes code), the work is under exclusive copyright by default. Unless you include a license that specifies otherwise, nobody else can copy, distribute, or modify your work without being at risk of take-downs, shake-downs, or litigation. Once the work has other contributors (each a copyright holder), “nobody” starts including you. [@ChooseALicense]
 
 - If you are the only user, this is probably fine
-- If you want other people to reuse and share your work, this is probably not what you want: pick a license to specify your terms more clearly
+- If you want other people to reuse and share your work, this is probably not what you want
+- Choose a license to specify your terms more clearly
 
 # Permissive licenses
 
 ## I want it simple and permissive
 
-> Permissive licenses let people do almost anything they want with your project, like making and distributing closed source versions. (choosealicense)
+> Permissive licenses let people do almost anything they want with your project, like making and distributing closed source versions. [@ChooseALicense]
 
 - Includes public domain (there is no copyright owner)
-- Easier to use and distribute
-- Harder to retain control and share improvements
 
 ## Examples
 
-- MIT, BSD, Apache
-- Chromium, Apache Web Server
+- MIT: [NodeJS](https://github.com/nodejs/node/blob/main/LICENSE)
+- BSD: [scikit-learn](https://github.com/scikit-learn/scikit-learn/blob/main/COPYING)
+- Apache: [Qiskit](https://github.com/Qiskit/qiskit/blob/master/LICENSE.txt)
+- Unlicense: [yt-dlp](https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE)
 
 # Copyleft licenses
 
 ## I care about sharing improvements
 
-> Copyleft licenses lets people do almost anything they want with your project, /except/ distributing closed source versions. (choosealicense)
+> Copyleft licenses lets people do almost anything they want with your project, /except/ distributing closed source versions. [@ChooseALicense]
 
 - Changes must be redistributed with a copyleft license and with source code
 - Some copyleft licenses (GPL) may be incompatible with proprietary code
@@ -84,8 +84,12 @@ Just stick it online, right?
 
 ## Examples
 
-- GPL, AGPL, LGPL (variants for linking code and sharing it over server applications)
-- Linux, Bash, Emacs
+- GPLv2: [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING)
+- GPLv3: [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE)
+  - provides additional clarifications on license compatibility, digital rights management, and patents
+- AGPL: [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING)
+  - requires servers hosting the code to release their
+- LGPL: TODO (many low-level libraries)
 
 # Licenses for non-software works
 
@@ -98,6 +102,7 @@ Just stick it online, right?
 ## Hardware
 
 ## 3D Printing
+
 Home 3D printing has made sharing 3D models common practice.
 
 Similar to source code files, 3D model files can be considered creative works, and can be
@@ -111,14 +116,18 @@ would be required for that.
 ## Making a new project
 
 - Your license conveys to the community how you intend your project to be used and shared
+- Permissive licenses are easier to use and distribute, but harder to retain control and share improvements
+- Copyleft licenses are harder to use and distribute, but easier to retain control and share improvements
 
 ## Contributing to an existing project
 
+<!-- TODO: slim down -->
+
 - Review the license
-- Check for contributor agreements:
-  - GNU Emacs: Contributing to Emacs itself or the official package repository (ELPA) requires you to assign your copyright to the FSF.
-  - Developer Certificate of Origin (DCO): Contributing to the Linux kernel requires signing this. In brief, the certificate verifies that the user wrote the open-source changes and allows the project to use them in a way consistent with the license. https://developercertificate.org/
-  - Contributor License Agreement (CLA): Can be very restrictive. CLAs typically allow the owner of the project (typically a foundation or a company) to relicense your patches. CLAs are controversial because if the company makes the project proprietary, you no longer own the open-source code that you contributed. The company does. This has spoiled the relationship between a few communities already.
+- Read the contributor agreements, if there are any:
+  - GNU Emacs: Contributing to Emacs itself or the official package repository (ELPA) requires you to assign your copyright to the FSF. Emacs is GPLv3 licensed so this is reasonable.
+  - Developer Certificate of Origin (DCO): Contributing to the Linux kernel requires signing this. In brief, the certificate verifies that the developer wrote the open-source changes and allows the project to use them in a way consistent with the license. This is reasonable because the developer owns their changes to the project. https://developercertificate.org/
+  - Contributor License Agreement (CLA): Refers to a restrictive class of agreements that might allow the owner of the project (usually a foundation or a company) to relicense your patches. Controversial because if the company makes the project proprietary, developers no longer own the open-source code that they contributed. The company does. This is contentious among some communities so contribute to these with caution.
 
 ## Dependencies and using other people's code
 
@@ -136,15 +145,16 @@ You can check the licenses of your code's dependencies for various languages:
 
 # Non-FOSS licenses
 
-Just because you can look at the code doesn't mean it's FOSS
+<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 
 ## Proprietary licenses
 
+An important requirement of FOSS is that it can be used for any purpose (commercial or otherwise).
+
+- Just because you can look at the code doesn't mean it's FOSS
 - Leaked/reverse-assembled proprietary code is still proprietary
 
 ## Source-available licenses
-
-An important requirement of FOSS is that it can be used for commercial purposes.
 
 - Business Source License ("permissive")
   - Releases are source available with a promise to open-source it later
@@ -153,7 +163,7 @@ An important requirement of FOSS is that it can be used for commercial purposes.
   - Copyleft extends much farther than the AGPL
   - Withdrawn from consideration to the Open-Source Initiative: restricts the right to make use of the program for any purpose
 
-## Creative Commons
+## Noncommercial Creative Commons licenses
 
 In recent years, the Creative Commons family of licenses have become popular.
 
@@ -165,12 +175,10 @@ are not free or open source. [@CCLicensesOpen]
 
 ## Ethical-source license
 
-An important requirement of FOSS is that it can be used for any purpose.
-
 Ethical source licenses have provisions that restrict uses for ethical purposes.
 
 - JSON license: "The Software shall be used for Good, not Evil."
-  - But what counts as an "ethical" usage?
+  - What counts as an "ethical" usage?
   - Maybe unenforceable
 
 # Practical and economic considerations
