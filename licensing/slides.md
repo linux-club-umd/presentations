@@ -76,7 +76,7 @@ Just stick it online, right?
 
 > Copyleft licenses lets people do almost anything they want with your project, /except/ distributing closed source versions. (choosealicense)
 
-- Changes must redistributed with a copyleft license and with source code
+- Changes must be redistributed with a copyleft license and with source code
 - Some copyleft licenses (GPL) may be incompatible with proprietary code
   <!--  TODO: Confirm with source. Elaborate or clarify. -->
   - LGPL probably doesn't have these problems
