@@ -104,7 +104,7 @@
   ;; Press Alt-Shift-Arrow to swap windows by direction
   (windmove-swap-states-default-keybindings '(shift meta))
   ;; Press C-x Alt-Arrow to delete windows by direction
-  (windmove-delete-default-keybindings nil 'meta)
+  (windmove-delete-default-keybindings nil 'meta))
 
 (use-package which-key
   ;; Show a list of commands and keybindings that can be executed from your current keypresses
@@ -203,6 +203,7 @@
   ;; https://elpa.gnu.org/packages/corfu.html#orgea2217e
   ;; TAB-and-Go customizations
   :custom
+  (corfu-auto t)
   (corfu-cycle t)           ;; Enable cycling for `corfu-next/previous'
   (corfu-preselect 'prompt) ;; Always preselect the prompt
 
@@ -214,7 +215,8 @@
         ("S-TAB" . corfu-previous)
         ([backtab] . corfu-previous))
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  (corfu-popupinfo-mode))
 
 ;; Use Dabbrev with Corfu!
 (use-package dabbrev
@@ -276,6 +278,8 @@
 (setq completion-category-overrides '((eglot (styles orderless))))
 ;; (with-eval-after-load 'eglot
 ;; (setq completion-category-defaults nil))
+;; https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
 
 (use-package tree-sitter)
 ;; incremental parsing library
@@ -317,7 +321,7 @@
 (use-package treemacs)
 
 (use-package dired-sidebar)
-;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-alternate-file)
 
 (use-package dired
   :custom
@@ -328,3 +332,14 @@
 (use-package diredfl
   :config
   (diredfl-global-mode))
+
+;; zoom in/out
+(bind-key (kbd "C-+") 'text-scale-increase)
+(bind-key (kbd "C-_") 'text-scale-decrease)
+
+(use-package default-text-scale
+  ;; emacs 29 includes this functionality by default
+  ;; C-M-= and C-M--
+  :config
+  (default-text-scale-mode))
+
