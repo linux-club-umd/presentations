@@ -148,7 +148,17 @@ Emacs and how we think you /might/ use Emacs.
 - Awareness of interesting options to dive deeper, if you wish to do so.
 
 * Basic Emacs usage
-** First things first
+** First things first: Keyboard shortcut notation
+=Ctrl+Alt+Shift+x=
+
+When talking about keyboard shortcuts, Emacs would write the above as =C-M-S-x=.
+
+- 'C' stands for control/ctrl.
+- 'M' stands for "meta". For historical reasons Emacs talks about a
+"meta" key. Nowadays this usually means "Alt".
+- 'S' stands for shift.
+
+** First things first: Stopping/quitting
 =C-g= key command quits the current action.
 
 - Make a mistake while typing a key command? =C-g= will quit the partially entered command.
@@ -159,6 +169,13 @@ Note: =C-g= means =Control+g=, which means hold control/ctrl and press
 'g'. We will use the shorter form because it is what Emacs uses, to
 help you get accustomed to it.
 
+** First things first: Running commands
+=M-x= (that's hold Alt+x) lets you execute commands by their name.
+
+Everything action in Emacs executes a command, even when you press
+simple letter keys. And you can always run that command manually by
+using =M-x=.
+
 ** Mess around in a buffer
 Create a new buffer.
 1. =C-x b=
@@ -166,6 +183,8 @@ Create a new buffer.
      1. Hold the Control/Ctrl key and press 'x'.
      2. Release the control key.
      3. Press 'b'.
+   - Note: This is different from =C-x C-b=, which means hold control,
+     press x then b, then release control.
 2. At the bottom of your Emacs window there should be a prompt "Switch
    to buffer", with your cursor at the end so that you can type.
 3. Type a name for the buffer, such as "new", then press enter.
@@ -216,8 +235,16 @@ So many options!
 ** Viewing multiple buffers at the same time
 
 1. Split the window: =C-x 2= splits horizontally, =C-x 3= splits vertically
-2. Scroll down one window. The view changes in that window only
-3. Use =C-x b== to switch buffers. You can also left/right click on the buffer name to cycle buffers.
+2. Scroll down one window. The view changes in that window only.
+3. Use =C-x b= to switch buffers. You can also left/right click on the
+   buffer name to cycle buffers, or use the menu bar.
+
+** Window shortcuts
+
+- Meta (Alt) plus arrow keys: move between windows
+- Meta and Shift plus arrow keys: swap the position of windows
+- =C-x 2=, =C-x 3= = Split horizontally and vertically
+- =C-x 0= = Delete/close window
 
 * Beginning our configuration
 ** Emacs Lisp code
@@ -353,20 +380,12 @@ package configuration.
 - The =ef-themes= look nice and colorful. There are many more themes
   out there, you just have to find a package that has one you like.
 
-** Conveniences
-Follow "Common User Access" conventions.
+** Binding keys
 
-- =C-z= = Undo
-- =C-x= = Cut
-- =C-c= = Copy
-- =C-v= = Paste
+You can always run a command with
 
-#+begin_src elisp
-  (use-package cua-base
-    :custom
-    (cua-keep-region-after-copy t)
-    :init
-    (cua-mode))
+#+begin_src elisp :tangle no
+
 #+end_src
 
 * Getting help
@@ -398,7 +417,18 @@ Completions!
 - Tab complete works as you expect
 - =M-/= shows a window for completing by substrings (dabbrev)
   - complete words that are already in the buffer
-- The cape package provides extra completions
+- The =cape= package provides extra completions
+
+* Advanced Emacs: Macros
+
+** What are Emacs macros?
+
+** Basics
+
+- =<f3>= = Start recording
+- =<f4>= = Stop recording
+- =C-x (=, =C-x )= = Start/stop recording
+- =C-x e= = Execute last macro
 
 * (optional) Adventures
 ** Adventures that await you, if you wish
@@ -451,17 +481,6 @@ Here are just a few examples of things Emacs can do beyond editing text.
 - https://www2.lib.uchicago.edu/keith/emacs/
 
 * (extra) Glossary
-** Keyboard shortcut notation
-=Ctrl+Alt+Shift+x=
-
-When talking about keyboard shortcuts, Emacs would write the above as =C-M-S-x=.
-
-'C' stands for control/ctrl.
-
-'M' stands for "meta". For historical reasons Emacs talks about a
-"meta" key. Nowadays this usually means "Alt".
-
-'S' stands for shift.
 * (extra) Further configuration :noexport:
 Configuration that won't show up in the slides, or a temporary place
 for configuration that we're not sure how to fit into the slides.

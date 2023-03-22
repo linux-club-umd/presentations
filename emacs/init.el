@@ -20,12 +20,6 @@
 ;; You can change the theme while Emacs is running with `M-x load-theme`.
 (load-theme 'modus-vivendi)
 
-(use-package cua-base
-  :custom
-  (cua-keep-region-after-copy t)
-  :init
-  (cua-mode))
-
 ;; Save changes made with Emacs' Customize system to a different file,
 ;; so that there isn't strange code added to your init.el file.
 ;; Then, load this file to load customizations.
