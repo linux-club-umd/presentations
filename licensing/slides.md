@@ -50,6 +50,12 @@ separate but closely related.
 Most licenses that fit the free software definition also fit the
 open-source software definition, and vice versa. [@CategoriesOfFreeAndNonfreeSoftware]
 
+The commonalities between the two are access to source code and freedom to use, modify, and share copies of the code for any purpose.
+
+Proprietary code places restrictions on these freedoms.
+
+<!-- https://softwareengineering.stackexchange.com/questions/21907/open-source-but-not-free-software-or-vice-versa/ -->
+
 # Just stick it online, right?
 
 ## No license = All rights reserved
