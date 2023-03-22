@@ -209,7 +209,7 @@ software nor open-source software.
 They may provide some of the freedoms and use terminology associated
 with FOSS, but do not fit all the requirements.
 
-## Proprietary licenses
+<!-- ## Proprietary licenses -->
 
 <!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 
@@ -222,9 +222,10 @@ An important requirement of FOSS is that it can be used for any purpose (commerc
 
 - Business Source License ("permissive")
   - Releases are source available with a promise to open-source it later
-  - QT, MariaDB, Codon
+  - [MariaDB](https://mariadb.com/bsl11/), [Codon](https://github.com/exaloop/codon/blob/develop/LICENSE)
 - Server Side Public License ("copyleft")
   - Copyleft extends much farther than the AGPL
+  - [MongoDB](https://www.mongodb.com/licensing/server-side-public-license)
 
 ## Noncommercial Creative Commons licenses
 
@@ -241,7 +242,7 @@ are not free or open source. [@CCLicensesOpen]
 Ethical source licenses have provisions that restrict uses for ethical purposes.
 
 - JSON license: "The Software shall be used for Good, not Evil."
-  - What counts as an "ethical" usage?
+  - How do you define "good" or "evil"? What counts as "ethical"?
   - Maybe unenforceable
 
 # Practical and economic considerations
