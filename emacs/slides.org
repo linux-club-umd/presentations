@@ -1,6 +1,6 @@
 #+TITLE: Introduction to the Emacs text editor
 #+PROPERTY: header-args :tangle init.el :noweb yes
-#+AUTHOR: Jeffrey Fisher; Skylar
+#+AUTHOR: Skylar; Jeffrey Fisher
 #+beamer_theme: metropolis
 
 # Top level headings will be sections, 2nd level headings will be slides.
@@ -13,7 +13,7 @@
 #+LATEX_HEADER: \usepackage{hyperref}
 #+LATEX_HEADER: \hypersetup{colorlinks,urlcolor=blue,linkcolor=blue}
 
-* TODO
+* TODO todo :noexport:
 Before publishing this document, search for the keyword TODO, and make
 sure nothing shows up.
 
@@ -180,11 +180,8 @@ selecting text and moving with the mouse.
   - When you open a file it is loaded into a buffer. When you "save a
     file", the contents of the buffer are written to the file.
 
-Emacs is definitely keyboard-focused, but it has pretty good mouse
-support.
-
-Learning new shortcuts is hard. The menu bar at the top of the screen
-has many common commands, and will also tell you the keyboard
+Learning new shortcuts takes time. The menu bar at the top of the
+screen has many common commands, and will also tell you the keyboard
 shortcut.
 
 ** Opening files
@@ -200,6 +197,15 @@ So many options!
   - Click on a file or folder name to open it, and click on =..= to go back 1 directory.
   - You can do other things like copy/move/rename/delete files in Dired too
 - If you know the path of the file, type =C-x C-f=. You can hold Control while pressing x and f. Then you can type the path and open it.
+
+** Common shortcuts
+
+- Select text: =C-SPC= (Ctrl+spacebar)
+  - Using movement shortcuts will select more text. Press =C-g= to stop
+    selecting.
+- =C-z=, =C-x=, =C-c=, =C-v= for undo/cut/copy/paste
+- Ctrl + left/right arrow to move by word
+- Right click for context menu
 
 ** Viewing multiple buffers at the same time
 
@@ -282,10 +288,10 @@ You can generally think of them like plugins/extensions.
 #+name: package-archives
 #+begin_src elisp :noweb tangle
   (setq package-archives
-        (list ("gnu" . "https://elpa.gnu.org/packages/")
-              ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-              ("melpa" . "https://melpa.org/packages/")
-              ))
+        '(("gnu" . "https://elpa.gnu.org/packages/")
+          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+          ("melpa" . "https://melpa.org/packages/")
+          ))
 #+end_src
 
 ** Package archives
