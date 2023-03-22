@@ -6,3 +6,7 @@ init.el: slides.org
 
 slides.pdf: slides.org
 	emacs --batch --eval "(require 'org)" slides.org --eval '(org-beamer-export-to-pdf)'
+
+.PHONY: test
+test: init.el
+	./test.sh

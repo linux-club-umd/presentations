@@ -543,7 +543,7 @@ for configuration that we're not sure how to fit into the slides.
     ;; Press Alt-Shift-Arrow to swap windows by direction
     (windmove-swap-states-default-keybindings '(shift meta))
     ;; Press C-x Alt-Arrow to delete windows by direction
-    (windmove-delete-default-keybindings nil 'meta)
+    (windmove-delete-default-keybindings nil 'meta))
 
   (use-package which-key
     ;; Show a list of commands and keybindings that can be executed from your current keypresses
