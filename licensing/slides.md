@@ -160,7 +160,7 @@ it and gives a summary of the permissions and conditions.
 In general:
 
 - Create a file at the top-level folder of your project named
-  LICENSE or LICENSE.txt, so it is easy to find.
+  `LICENSE` or `LICENSE.txt`, so it is easy to find.
 - Copy the text of the license you are using into that file.
 - Add a copyright notice at the top of the license file.
   - Copyright (c) [year] [name of author]
@@ -176,7 +176,7 @@ In general:
 ## How to check the license of other code
 
 - Look for comments at the top of the file that mention the license.
-- Look for common filenames like LICENSE, LICENSE.txt, COPYING, README
+- Look for common filenames like `LICENSE`, `LICENSE.txt`, `COPYING`, `README`
 - Sites like GitHub and GitLab may detect the license and display it
   to you in the interface.
 
