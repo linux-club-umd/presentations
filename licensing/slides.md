@@ -88,13 +88,13 @@ Proprietary code places restrictions on these freedoms.
 
 ## I care about sharing improvements
 
-> Copyleft licenses lets people do almost anything they want with your project, /except/ distributing closed source versions. [@ChooseALicense]
+> Copyleft licenses lets people do almost anything they want with your project, **except** distributing closed source versions. [@ChooseALicense]
 
 - Changes must be redistributed with a copyleft license and with source code
 - Some copyleft licenses (GPL) may be incompatible with proprietary code
+  - GPL extends to linking libraries in compiled code
   <!--  TODO: Confirm with source. Elaborate or clarify. -->
-  - LGPL probably doesn't have these problems
-- Easier to retain control and share improvements
+  - LGPL projects can be linked to proprietary code
 
 ## Examples
 
@@ -102,8 +102,9 @@ Proprietary code places restrictions on these freedoms.
 - GPLv3: [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE)
   - provides additional clarifications on license compatibility, digital rights management, and patents
 - AGPL: [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING)
-  - requires servers hosting the code to release their
-- LGPL: TODO (many low-level libraries)
+  - requires servers hosting the code to release their source code
+- LGPL: [QT](https://www.qt.io/licensing/open-source-lgpl-obligations) (most of it)
+  - most of it can be linked in proprietary projects without source redistribution
 
 # Licenses for non-software works
 
