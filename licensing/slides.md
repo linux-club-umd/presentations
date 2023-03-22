@@ -134,32 +134,8 @@ would be required for that.
 ## Making a new project
 
 - Your license conveys to the community how you intend your project to be used and shared
-- Permissive licenses are easier to use and distribute, but harder to retain control and share improvements
-- Copyleft licenses are harder to use and distribute, but easier to retain control and share improvements
-
-## Contributing to an existing project
-
-<!-- TODO: slim down -->
-
-- Review the license
-- Read the contributor agreements, if there are any:
-  - GNU Emacs: Contributing to Emacs itself or the official package repository (ELPA) requires you to assign your copyright to the FSF. Emacs is GPLv3 licensed so this is reasonable.
-  - Developer Certificate of Origin (DCO): Contributing to the Linux kernel requires signing this. In brief, the certificate verifies that the developer wrote the open-source changes and allows the project to use them in a way consistent with the license. This is reasonable because the developer owns their changes to the project. https://developercertificate.org/
-  - Contributor License Agreement (CLA): Refers to a restrictive class of agreements that might allow the owner of the project (usually a foundation or a company) to relicense your patches. Controversial because if the company makes the project proprietary, developers no longer own the open-source code that they contributed. The company does. This is contentious among some communities so contribute to these with caution.
-
-## Dependencies and using other people's code
-
-- License compatability: you must comply with the licenses of code you depend on
-- Rule of thumb:
-  - copyleft code can only be reused in copyleft code
-  - permissive code can be reused almost anywhere
-  - proprietary code may have restrictions (frequently noncommercial)
-
-You can check the licenses of your code's dependencies for various languages:
-
-- [Rust](https://github.com/EmbarkStudios/cargo-about)
-- [Python](https://pypi.org/project/pip-licenses/)
-- [Javascript](https://www.npmjs.com/package/license-checker)
+- Permissive licenses are easier to use and understand
+- Copyleft licenses encourage publicly sharing changes and have broader legal protections (in theory)
 
 ## How to apply a license
 
@@ -195,6 +171,33 @@ If you can't find anything, contact the author to ask.
 Make sure your plans on how to use the code fit the license. If it is
 a dependency of your project, make sure your project is licensed under
 a compatible license.
+
+## Dependencies and using other people's code
+
+- License compatability: you must comply with the licenses of code you depend on
+- Rule of thumb:
+  - copyleft code can only be reused in copyleft code
+  - permissive code can be reused almost anywhere
+  - proprietary code may have restrictions (frequently noncommercial)
+
+You can check the licenses of your code's dependencies for various languages:
+
+- [Rust](https://github.com/EmbarkStudios/cargo-about)
+- [Python](https://pypi.org/project/pip-licenses/)
+- [Javascript](https://www.npmjs.com/package/license-checker)
+
+## Contributing to an existing project
+
+- Review the license
+- Read the contributor agreements, if there are any. You may be required to assign your copyright to the copyright holder for them to use your contributions and enforce the license.
+
+## Example contributor agreements:
+
+- To contribute to GNU Emacs, you must assign your copyright to the Free Software Foundation.
+- [Developer Certificate of Origin](https://developercertificate.org/) (DCO): Used by the Linux kernel. In brief, the certificate verifies that the developer wrote the open-source changes, and allows the project to use them in a way consistent with the license.
+- [Contributor License Agreement](https://wikipedia.org/wiki/Contributor_License_Agreement) (CLA): Typically used in corporate projects. Different CLAs may have different terms. Beware of terms that allow the owner of the project to relicense your patches, as they can relicense open-source code _you_ own into proprietary code _they_ own:
+
+  > When a CLA requires a contributor to assign unrestricted republishing rights to the project, contributed code can be relicensed at the discretion of the project, even when the CLA does not assign copyright to the project. [@CLA_relicensing_controversy]
 
 # Non-FOSS licenses
 
