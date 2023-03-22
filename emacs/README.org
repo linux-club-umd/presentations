@@ -1,3 +1,8 @@
 * Introduction to Emacs: The extensible text editor
 ** Brief (2-4 sentences)
+Learn the basics of using and configuring Emacs, along with a few
+advanced features. Emacs is an infinitely extensible text editor with
+some quirks, but we provide a sample configuration file to provide a
+starting point and soothe some of the quirks.
+
 ** Description
