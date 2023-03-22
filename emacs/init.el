@@ -143,14 +143,18 @@
          ("M-g g" . consult-goto-line)
          ("M-g M-g" . consult-goto-line)))
 
-;; icons!
-(use-package all-the-icons)
+;; icons! You can install fonts with M-x all-the-icons-install-fonts
+(use-package all-the-icons
+  :if (display-graphic-p))
+;; icons for completion buffer
 (use-package all-the-icons-completion
   :after all-the-icons
   :init (all-the-icons-completion-mode))
+;; icons for dired
 (use-package all-the-icons-dired
   :after all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
+;; icons for corfu popup
 (use-package kind-icon
   :after corfu
   :custom
@@ -187,6 +191,10 @@
 ;; show line and column numbers in modeline
 (column-number-mode)
 (line-number-mode)
+;; show line numbers in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;; highlight the current line in programming modes
+(add-hook 'prog-mode-hook #'hl-line-mode)
 ;; wrap visual lines
 ;; opinionated
 ;; (global-visual-line-mode)
@@ -198,11 +206,31 @@
   :delight whole-line-or-region-local-mode
   :init (whole-line-or-region-global-mode))
 
+;; save minibuffer history
+(use-package savehist
+  :init
+  (savehist-mode)
+  (add-to-list 'savehist-additional-variables 'corfu-history))
+
+;; remember file history
+;; integrates with consult
+(use-package recentf
+  ;; double recentf history size
+  :custom
+  (recentf-max-menu-items 20)
+  (recentf-max-saved-items 40)
+  :bind
+  ("C-x C-r" . recentf)
+  :init
+  (recentf-mode))
+
+
 (use-package corfu
   ;; Tab completion
   ;; https://elpa.gnu.org/packages/corfu.html#orgea2217e
   ;; TAB-and-Go customizations
   :custom
+  (corfu-auto t)
   (corfu-cycle t)           ;; Enable cycling for `corfu-next/previous'
   (corfu-preselect 'prompt) ;; Always preselect the prompt
 
@@ -214,7 +242,8 @@
         ("S-TAB" . corfu-previous)
         ([backtab] . corfu-previous))
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  (corfu-popupinfo-mode))
 
 ;; Use Dabbrev with Corfu!
 (use-package dabbrev
@@ -234,23 +263,24 @@
 ;; Add extensions
 (use-package cape
   ;; Bind dedicated completion commands
-  ;; Alternative prefix keys: C-c p, M-p, M-+, ...
-  :bind (("C-c p p" . completion-at-point) ;; capf
-         ("C-c p t" . complete-tag)        ;; etags
-         ("C-c p d" . cape-dabbrev)        ;; or dabbrev-completion
-         ("C-c p h" . cape-history)
-         ("C-c p f" . cape-file)
-         ("C-c p k" . cape-keyword)
-         ("C-c p s" . cape-symbol)
-         ("C-c p a" . cape-abbrev)
-         ("C-c p i" . cape-ispell)
-         ("C-c p l" . cape-line)
-         ("C-c p w" . cape-dict)
-         ("C-c p \\" . cape-tex)
-         ("C-c p _" . cape-tex)
-         ("C-c p ^" . cape-tex)
-         ("C-c p &" . cape-sgml)
-         ("C-c p r" . cape-rfc1345))
+  ;; Use M-p because it's easier to type
+  :bind (("M-p p" . completion-at-point) ;; capf
+         ("M-p t" . complete-tag)        ;; etags
+         ("M-p d" . cape-dabbrev)        ;; or dabbrev-completion
+         ("M-p h" . cape-history)
+         ("M-p f" . cape-file)
+         ("M-p k" . cape-keyword)
+         ("M-p s" . cape-symbol)
+         ("M-p a" . cape-abbrev)
+         ("M-p i" . cape-ispell)
+         ("M-p l" . cape-line)
+         ("M-p w" . cape-dict)
+         ("M-p \\" . cape-tex)
+         ("M-p _" . cape-tex)
+         ("M-p ^" . cape-tex)
+         ("M-p &" . cape-sgml)
+         ("M-p r" . cape-rfc1345))
+
   :init
   ;; Add `completion-at-point-functions', used by `completion-at-point'.
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
@@ -276,11 +306,15 @@
 (setq completion-category-overrides '((eglot (styles orderless))))
 ;; (with-eval-after-load 'eglot
 ;; (setq completion-category-defaults nil))
+;; https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
+
 
 (use-package tree-sitter)
 ;; incremental parsing library
 ;; Emacs has historically used font-lock, a regular expression syntax highlighter
-;; tree-sitter features faster, more colorful, and more accurate syntax highlighting
+;; tree-sitter features faster, more colorful, and more accurate syntax highlighting.
+;; Run M-x tree-sitter-langs-install-grammars to install a default set of grammars.
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (use-package tree-sitter-langs)
@@ -328,3 +362,5 @@
 (use-package diredfl
   :config
   (diredfl-global-mode))
+
+(use-package magit)
