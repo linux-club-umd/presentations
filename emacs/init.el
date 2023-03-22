@@ -143,14 +143,18 @@
          ("M-g g" . consult-goto-line)
          ("M-g M-g" . consult-goto-line)))
 
-;; icons!
-(use-package all-the-icons)
+;; icons! install icons with M-x all-the-icons-install-fonts
+(use-package all-the-icons
+  :if (display-graphic-p))
+;; icons for completion buffer
 (use-package all-the-icons-completion
   :after all-the-icons
   :init (all-the-icons-completion-mode))
+;; icons for dired
 (use-package all-the-icons-dired
   :after all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
+;; icons for corfu popup
 (use-package kind-icon
   :after corfu
   :custom
@@ -187,6 +191,12 @@
 ;; show line and column numbers in modeline
 (column-number-mode)
 (line-number-mode)
+
+;; show line numbers in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;; highlight the current line in programming modes
+(add-hook 'prog-mode-hook #'hl-line-mode)
+
 ;; wrap visual lines
 ;; opinionated
 ;; (global-visual-line-mode)
@@ -197,6 +207,24 @@
   ;; also affects the comment shortcut - Alt-; comments whole lines when there is no region, like Ctrl-x Ctrl-;
   :delight whole-line-or-region-local-mode
   :init (whole-line-or-region-global-mode))
+
+;; save minibuffer history
+(use-package savehist
+  :init
+  (savehist-mode)
+  (add-to-list 'savehist-additional-variables 'corfu-history))
+
+;; remember file history
+;; integrates with consult
+(use-package recentf
+  ;; double recentf history size
+  :custom
+  (recentf-max-menu-items 20)
+  (recentf-max-saved-items 40)
+  :bind
+  ("C-x C-r" . recentf)
+  :init
+  (recentf-mode))
 
 (use-package corfu
   ;; Tab completion
@@ -227,32 +255,26 @@
   :custom
   (dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'")))
 
-;; ;; Enable Corfu completion UI
-;; ;; See the Corfu README for more configuration tips.
-;; (use-package corfu
-;;   :init
-;;   (global-corfu-mode))
-
 ;; Add extensions
 (use-package cape
   ;; Bind dedicated completion commands
-  ;; Alternative prefix keys: C-c p, M-p, M-+, ...
-  :bind (("C-c p p" . completion-at-point) ;; capf
-         ("C-c p t" . complete-tag)        ;; etags
-         ("C-c p d" . cape-dabbrev)        ;; or dabbrev-completion
-         ("C-c p h" . cape-history)
-         ("C-c p f" . cape-file)
-         ("C-c p k" . cape-keyword)
-         ("C-c p s" . cape-symbol)
-         ("C-c p a" . cape-abbrev)
-         ("C-c p i" . cape-ispell)
-         ("C-c p l" . cape-line)
-         ("C-c p w" . cape-dict)
-         ("C-c p \\" . cape-tex)
-         ("C-c p _" . cape-tex)
-         ("C-c p ^" . cape-tex)
-         ("C-c p &" . cape-sgml)
-         ("C-c p r" . cape-rfc1345))
+  ;; Use M-p because it's easier to type
+  :bind (("M-p p" . completion-at-point) ;; capf
+         ("M-p t" . complete-tag)        ;; etags
+         ("M-p d" . cape-dabbrev)        ;; or dabbrev-completion
+         ("M-p h" . cape-history)
+         ("M-p f" . cape-file)
+         ("M-p k" . cape-keyword)
+         ("M-p s" . cape-symbol)
+         ("M-p a" . cape-abbrev)
+         ("M-p i" . cape-ispell)
+         ("M-p l" . cape-line)
+         ("M-p w" . cape-dict)
+         ("M-p \\" . cape-tex)
+         ("M-p _" . cape-tex)
+         ("M-p ^" . cape-tex)
+         ("M-p &" . cape-sgml)
+         ("M-p r" . cape-rfc1345))
   :init
   ;; Add `completion-at-point-functions', used by `completion-at-point'.
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
@@ -285,6 +307,7 @@
 ;; incremental parsing library
 ;; Emacs has historically used font-lock, a regular expression syntax highlighter
 ;; tree-sitter features faster, more colorful, and more accurate syntax highlighting
+;; run M-x tree-sitter-langs-install-grammars to install a default set of grammars
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (use-package tree-sitter-langs)
