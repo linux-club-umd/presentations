@@ -25,14 +25,23 @@ The defaults are not very mneumonic.
 
 Jeff: I need to look at windmove.
 
-** TODO What basics do we need to cover?
-Do we even need to cover "arrow keys move in the text"? I guess we could mention it.
+Skylar: Alt+Arrow should do the job.
 
-Jeff: As a short introduction at a hackathon I feel we should
-introduce interesting features instead of the basics. The basics of
-movement are best learned with sustained practice, and Emacs has a
-good tutorial for that already. Plus common shortcuts actually seem to
-be default, like Control plus arrow keys for movement by word.
+** TODO What basics do we need to cover?
+
+Just to remind you, the basics should work as expected (because we configured them):
+
+- Ctrl-z, Ctrl-x, Ctrl-c, Ctrl-v for undo/cut/copy/paste
+- Ctrl-Arrows for moving forward/back words
+- Right click for context menu
+
+Some shortcuts are a little different (should we rebind these?):
+- Select all = Ctrl-x + h
+- Save file = Ctrl-x + s
+- Open file = Ctrl-x + f
+- Close file = Ctrl-x + k
+- Save as = Ctrl-x + Ctrl+w
+- Find = Ctrl-s
 
 ** TODO What to do for unfamiliar notation/terms?
 At least two options:
@@ -46,7 +55,12 @@ Jeff: Temporarily I am leaning towards covering them upfront. Will
 wait for feedback from Skylar. Also will see how much time it uses and
 confusion it creates.
 
-** TODO Display line numbers by default, or at least mention how to in the config.
+Skylar: Things like C-x and M-x being Ctrl-x and Alt-x are just notational changes. Things like "everything is a buffer" are a little more confusing.
+
+** DONE Display line numbers by default, or at least mention how to in the config.
+CLOSED: [2023-03-21 Tue 23:37]
+
+** TODO Review the modeline
 
 ** TODO Notation/terms glossary
 - Emacs keyboard shortcut notation
@@ -64,6 +78,8 @@ Jeff: If eglot LSP is reasonably easy to setup, then that'd be great.
 However I don't think installing the actual langauge servers easily is
 a solved problem. I haven't used LSP though so I don't actually know.
 
+Skylar: Emacs LSP is pretty finicky overall. Eglot is the easiest way to use it but integrating completions requires a lot of work. Would recommend people manually complete using dabbrev or hippie-expand or cape, instead of trying to write their own custom super-capf. If I can figure out how to do it before, then that would be nice.
+
 ** TODO Goal: Configuration results in an Emacs usable at a Notepad++ level
 Should paper over main annoyances that new users face.
 
@@ -72,10 +88,13 @@ cua-mode does a lot here.
 ** TODO Spellcheck this document.
 
 ** TODO Should we enable pixel-scroll-mode in the config?
+
+Not for Emacs 28. It's very laggy on my computer. For Emacs 29, there's pixel-scroll-precision-mode, which works much better.
+
 * Meta rules for this document :noexport:
 ** Emacs Lisp
 *** Avoid using quote where possible.
-hello o not use quote for lists, use =(list)= instead if possible. =(list)=
+try not to use quote for lists, use =(list)= instead if possible. =(list)=
 is hopefully more readable and approachable for people new to Lisp,
 which the majority of our audience likely will be.
 ** Famliarity
@@ -173,7 +192,20 @@ shortcut.
 # worked with file paths yet, and I don't know if Emacs can or should
 # open the system file dialog. Maybe could teach using Dired?
 
+So many options!
+
+- You can click on the toolbar to open files.
+- If you set Emacs as your default editor, then you can open files by double clicking them in your operating system's native file manager.
+- Open a file browser in Emacs: =M-x dired=.
+  - Click on a file or folder name to open it, and click on =..= to go back 1 directory.
+  - You can do other things like copy/move/rename/delete files in Dired too
+- If you know the path of the file, type =C-x C-f=. You can hold Control while pressing x and f. Then you can type the path and open it.
+
 ** Viewing multiple buffers at the same time
+
+1. Split the window: =C-x 2= splits horizontally, =C-x 3= splits vertically
+2. Scroll down one window. The view changes in that window only
+3. Use =C-x b== to switch buffers. You can also left/right click on the buffer name to cycle buffers.
 
 * Beginning our configuration
 ** Emacs Lisp code
@@ -349,8 +381,18 @@ editing features.
 
 ** Useful features
 
+- eshell is a shell in Emacs Lisp
+- eww is the Emacs Web Wowser
+
 ** Advanced text editing
 
+Completions!
+
+- Tab complete works as you expect
+- =M-/= shows a window for completing by substrings (dabbrev)
+  - complete words that are already in the buffer
+- The cape package provides extra completions
+  
 * (optional) Adventures
 ** Adventures that await you, if you wish
 # TODO : Do we want to mention Doom, Spacemacs, or any other pre-made
@@ -359,6 +401,7 @@ editing features.
 # Jeff: Personally I have used Doom and found it to be pretty good, but
 # now I prefer a smaller custom configuration I can more easily
 # understand.
+# Skylar: Yes mention Doom/Spacemacs
 - TRAMP : Transparent Remote (file) Access, Multiple Protocol
   - Similar to VS Code's Remote SSH plugin.
 - evil-mode: Emulates Vim keybindings.
@@ -397,6 +440,7 @@ Here are just a few examples of things Emacs can do beyond editing text.
 - [[https://www.gnu.org/software/emacs/manual/index.html][GNU Emacs manuals]]
   - Also available inside of Emacs. =M-x info-emacs-manual= or =C-M-h r=
 - [[https://www.emacswiki.org/][EmacsWiki]]
+- https://www2.lib.uchicago.edu/keith/emacs/
 
 * (extra) Glossary
 ** Keyboard shortcut notation
