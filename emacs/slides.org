@@ -1,6 +1,6 @@
 #+TITLE: Introduction to the Emacs text editor
 #+PROPERTY: header-args :tangle init.el :noweb yes
-#+AUTHOR: Skylar; Jeffrey Fisher
+#+AUTHOR: Skylar Chan; Jeffrey Fisher
 #+beamer_theme: metropolis
 
 # Top level headings will be sections, 2nd level headings will be slides.
