@@ -248,12 +248,24 @@ Ethical source licenses have provisions that restrict uses for ethical purposes.
 # Practical and economic considerations
 
 - Whatever license you pick, consider the community
-- If you need a legally-contentious or custom license, consult a lawyer
-- Now you know the basics of software licensing
 
 ## Economic considerations
 
-- Making money from FOSS is difficult
+- Making money from FOSS is difficult but possible
+- One option is to sell commercial licenses and software support
+
+## Legal considerations
+
+Consult a lawyer if:
+
+- You want a custom license
+- You want to litigate a license violation
+
+Note: we (the authors) are not lawyers.
+
+## The end
+
+Now you know the basics of software licensing!
 
 # Bibliography
 
