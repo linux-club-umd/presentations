@@ -1,0 +1,3 @@
+* Introduction to Emacs: The extensible text editor
+** Brief (2-4 sentences)
+** Description
