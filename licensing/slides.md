@@ -110,11 +110,14 @@ Proprietary code places restrictions on these freedoms.
 
 ## Creative Commons
 
+Use Creative Commons to license creative, non-software works like pictures, video, and music.
+
 - CC0 = public domain
 - CC-BY = attribution (like MIT)
 - CC-BY-SA = share alike (like GPL)
 
-## Hardware
+<!-- ## Hardware -->
+<!-- TODO: is hardware/3D printing the same section? -->
 
 ## 3D Printing
 
