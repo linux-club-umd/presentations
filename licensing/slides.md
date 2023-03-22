@@ -116,7 +116,7 @@ Home 3D printing has made sharing 3D models common practice.
 Similar to source code files, 3D model files can be considered creative works, and can be
 licensed as such.
 
-Note: This does not mean that the design or the physical prints are protected. Patents 
+Note: This does not mean that the design or the physical prints are protected. Patents
 would be required for that.
 
 # Working with others and in a community
@@ -151,7 +151,50 @@ You can check the licenses of your code's dependencies for various languages:
 - [Python](https://pypi.org/project/pip-licenses/)
 - [Javascript](https://www.npmjs.com/package/license-checker)
 
+## How to apply a license
+
+GitHub's <https://choosealicense.com/> is a great resource, and heavily
+inspired this presentation. For each license it tells you how to apply
+it and gives a summary of the permissions and conditions.
+
+In general:
+
+- Create a file at the top-level folder of your project named
+  LICENSE or LICENSE.txt, so it is easy to find.
+- Copy the text of the license you are using into that file.
+- Add a copyright notice at the top of the license file.
+  - Copyright (c) [year] [name of author]
+- (maybe) In a README file and at the top of every code file, add a
+  copyright notice and a statement of what license the file is
+  licensed under.
+  - This is not strictly necessary, but can reduce chances that
+    someone copies the code and forgets to provide a copy of the
+    license.
+  - At the end of the GPL there is shorter sample text that you can
+    choose to include in every file.
+
+## How to check the license of other code
+
+- Look for comments at the top of the file that mention the license.
+- Look for common filenames like LICENSE, LICENSE.txt, COPYING, README
+- Sites like GitHub and GitLab may detect the license and display it
+  to you in the interface.
+
+If you can't find anything, contact the author to ask.
+
+Make sure your plans on how to use the code fit the license. If it is
+a dependency of your project, make sure your project is licensed under
+a compatible license.
+
 # Non-FOSS licenses
+
+## Non-FOSS licenses
+
+The rest of the licenses we mention do not fit the definition of free
+software nor open-source software.
+
+They may provide some of the freedoms and use terminology associated
+with FOSS, but do not fit all the requirements.
 
 ## Proprietary licenses
 
@@ -169,16 +212,15 @@ An important requirement of FOSS is that it can be used for any purpose (commerc
   - QT, MariaDB, Codon
 - Server Side Public License ("copyleft")
   - Copyleft extends much farther than the AGPL
-  - Withdrawn from consideration to the Open-Source Initiative: restricts the right to make use of the program for any purpose
 
 ## Noncommercial Creative Commons licenses
 
 In recent years, the Creative Commons family of licenses have become popular.
 
-3D printing repository websites such as Thingiverse and Printables have these licenses 
+3D printing repository websites such as Thingiverse and Printables have these licenses
 available for users to select from when uploading their designs.
 
-While it is not well explained on these sites, the Non-Commercial versions of these licenses 
+While it is not well explained on these sites, the Non-Commercial versions of these licenses
 are not free or open source. [@CCLicensesOpen]
 
 ## Ethical-source license
@@ -194,6 +236,10 @@ Ethical source licenses have provisions that restrict uses for ethical purposes.
 - Whatever license you pick, consider the community
 - If you need a legally-contentious or custom license, consult a lawyer
 - Now you know the basics of software licensing
+
+## Economic considerations
+
+- Making money from FOSS is difficult
 
 # Bibliography
 
