@@ -194,10 +194,11 @@ You should now be in a blank buffer.
 Notepad-level stuff works. Type stuff, backspace, arrow keys,
 selecting text and moving with the mouse.
 
-** Hold up
+** Hold up - what's a buffer?
 - Buffer = A place where text is stored that you can edit.
   - When you open a file it is loaded into a buffer. When you "save a
     file", the contents of the buffer are written to the file.
+  - "Everything is a buffer" = most shortcuts and commands work across any buffer with text - the exact details may vary depending on the application.
 
 Learning new shortcuts takes time. The menu bar at the top of the
 screen has many common commands, and will also tell you the keyboard
