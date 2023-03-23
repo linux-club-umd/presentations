@@ -172,7 +172,7 @@ help you get accustomed to it.
 ** First things first: Running commands
 =M-x= (that's hold Alt+x) lets you execute commands by their name.
 
-Everything action in Emacs executes a command, even when you press
+Every action in Emacs executes a command, even when you press
 simple letter keys. And you can always run that command manually by
 using =M-x=.
 
@@ -385,7 +385,7 @@ package configuration.
 You can always run a command with
 
 #+begin_src elisp :tangle no
-
+M-x command name
 #+end_src
 
 * Getting help
