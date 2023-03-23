@@ -428,8 +428,11 @@ Commands starting with =describe-=.
 
 - =describe-command= (bound to =C-h x=. Mneumonic: =x= because =M-x= runs commands.)
 - =describe-variable= (bound to =C-h v=)
+- =describe-key= (bound to =C-h k=)
 
 =C-h ?= will tell you about all the help functions bound under the =C-h= prefix.
+
+You can also press =F1= instead of =C-h=, so =C-h k= becomes =F1 k=.
 
 * Advanced Emacs
 ** Advanced Emacs
