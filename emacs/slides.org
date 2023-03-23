@@ -239,15 +239,25 @@ So many options!
 
 1. Split the window: =C-x 2= splits horizontally, =C-x 3= splits vertically
 2. Scroll down one window. The view changes in that window only.
-3. Use =C-x b= to switch buffers. You can also left/right click on the
-   buffer name to cycle buffers, or use the menu bar.
+3. Use =C-x b= to switch buffers. You can also click on the menubar: Buffers > select buffer, or press Ctrl-left click
 
 ** Window shortcuts
 
 - Meta (Alt) plus arrow keys: move between windows
 - Meta and Shift plus arrow keys: swap the position of windows
 - =C-x 2=, =C-x 3= = Split horizontally and vertically
-- =C-x 0= = Delete/close window
+- =C-x 0= = Delete/close focused window
+- =C-x 1= = Delete all other windows except focused window
+
+** Modeline
+
+Aka the status bar. We use the [[https://github.com/seagle0128/doom-modeline][Doom Modeline]] which adds a dash of color and icons to the default.
+
+- Filename: Left/right click on the filename to cycle buffers
+- UTF-8: Change line ending style (when working on files across operating systems)
+- Major mode: Left click to access major mode commands, right click to access minor mode commands
+- Git integration: Click to access VC (version-control) commands, like viewing commit history
+- And more goodies we won't cover here
 
 * Beginning our configuration
 ** Emacs Lisp code
