@@ -368,6 +368,8 @@ package configuration.
 # presentation is a good idea. Maybe could only take 10 seconds, then
 # people can play with the options while we move on?
 
+# Skylar - just briefly mention this part so people can play with the themes a bit
+
 # TODO : ef-themes seem to conflict with modus themes, at least for
 # display-line-numebers mode line numbers column. and some other text
 # highlighting aspects.
