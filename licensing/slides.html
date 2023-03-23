@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Skylar">
+  <meta name="author" content="Skylar Chan">
   <meta name="author" content="John Evans">
   <meta name="author" content="Jeffrey Fisher">
   <title>Licensing: How to open-source your work</title>
@@ -400,7 +400,7 @@ background-color: var(--r-background-color);
 
 <section id="title-slide">
   <h1 class="title">Licensing: How to open-source your work</h1>
-  <p class="author">Skylar</p>
+  <p class="author">Skylar Chan</p>
   <p class="author">John Evans</p>
   <p class="author">Jeffrey Fisher</p>
 </section>
@@ -467,6 +467,11 @@ separate but closely related.</p>
 <p>Most licenses that fit the free software definition also fit the
 open-source software definition, and vice versa. <span class="citation" data-cites="CategoriesOfFreeAndNonfreeSoftware">(<span>“Categories of
 Free and Nonfree Software,”</span> n.d.)</span></p>
+<p>The commonalities between the two are access to source code and
+freedom to use, modify, and share copies of the code for any
+purpose.</p>
+<p>Proprietary code places restrictions on these freedoms.</p>
+<!-- https://softwareengineering.stackexchange.com/questions/21907/open-source-but-not-free-software-or-vice-versa/ -->
 </section></section>
 <section>
 <section id="just-stick-it-online-right" class="title-slide slide level1">
@@ -528,18 +533,20 @@ Source License,”</span> n.d.)</span></p>
 <h2>I care about sharing improvements</h2>
 <blockquote>
 <p>Copyleft licenses lets people do almost anything they want with your
-project, /except/ distributing closed source versions. <span class="citation" data-cites="ChooseALicense">(<span>“Choose an Open
-Source License,”</span> n.d.)</span></p>
+project, <strong>except</strong> distributing closed source versions.
+<span class="citation" data-cites="ChooseALicense">(<span>“Choose an
+Open Source License,”</span> n.d.)</span></p>
 </blockquote>
 <ul>
 <li>Changes must be redistributed with a copyleft license and with
 source code</li>
 <li>Some copyleft licenses (GPL) may be incompatible with proprietary
-code <!--  TODO: Confirm with source. Elaborate or clarify. -->
+code
 <ul>
-<li>LGPL probably doesn’t have these problems</li>
+<li>GPL extends to linking libraries in compiled code
+<!--  TODO: Confirm with source. Elaborate or clarify. --></li>
+<li>LGPL projects can be linked to proprietary code</li>
 </ul></li>
-<li>Easier to retain control and share improvements</li>
 </ul>
 </section>
 <section id="examples-1" class="slide level2">
@@ -554,9 +561,14 @@ rights management, and patents</li>
 </ul></li>
 <li>AGPL: <a href="https://github.com/rstudio/rstudio/blob/main/COPYING">RStudio</a>
 <ul>
-<li>requires servers hosting the code to release their</li>
+<li>requires servers hosting the code to release their source code</li>
 </ul></li>
-<li>LGPL: TODO (many low-level libraries)</li>
+<li>LGPL: <a href="https://www.qt.io/licensing/open-source-lgpl-obligations">QT</a>
+(most of it)
+<ul>
+<li>most of it can be linked in proprietary projects without source
+redistribution</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -566,14 +578,15 @@ rights management, and patents</li>
 </section>
 <section id="creative-commons" class="slide level2">
 <h2>Creative Commons</h2>
+<p>Use Creative Commons to license creative, non-software works like
+pictures, video, and music.</p>
 <ul>
 <li>CC0 = public domain</li>
 <li>CC-BY = attribution (like MIT)</li>
 <li>CC-BY-SA = share alike (like GPL)</li>
 </ul>
-</section>
-<section id="hardware" class="slide level2">
-<h2>Hardware</h2>
+<!-- ## Hardware -->
+<!-- TODO: is hardware/3D printing the same section? -->
 </section>
 <section id="d-printing" class="slide level2">
 <h2>3D Printing</h2>
@@ -593,57 +606,9 @@ protected. Patents would be required for that.</p>
 <ul>
 <li>Your license conveys to the community how you intend your project to
 be used and shared</li>
-<li>Permissive licenses are easier to use and distribute, but harder to
-retain control and share improvements</li>
-<li>Copyleft licenses are harder to use and distribute, but easier to
-retain control and share improvements</li>
-</ul>
-</section>
-<section id="contributing-to-an-existing-project" class="slide level2">
-<h2>Contributing to an existing project</h2>
-<!-- TODO: slim down -->
-<ul>
-<li>Review the license</li>
-<li>Read the contributor agreements, if there are any:
-<ul>
-<li>GNU Emacs: Contributing to Emacs itself or the official package
-repository (ELPA) requires you to assign your copyright to the FSF.
-Emacs is GPLv3 licensed so this is reasonable.</li>
-<li>Developer Certificate of Origin (DCO): Contributing to the Linux
-kernel requires signing this. In brief, the certificate verifies that
-the developer wrote the open-source changes and allows the project to
-use them in a way consistent with the license. This is reasonable
-because the developer owns their changes to the project.
-https://developercertificate.org/</li>
-<li>Contributor License Agreement (CLA): Refers to a restrictive class
-of agreements that might allow the owner of the project (usually a
-foundation or a company) to relicense your patches. Controversial
-because if the company makes the project proprietary, developers no
-longer own the open-source code that they contributed. The company does.
-This is contentious among some communities so contribute to these with
-caution.</li>
-</ul></li>
-</ul>
-</section>
-<section id="dependencies-and-using-other-peoples-code" class="slide level2">
-<h2>Dependencies and using other people’s code</h2>
-<ul>
-<li>License compatability: you must comply with the licenses of code you
-depend on</li>
-<li>Rule of thumb:
-<ul>
-<li>copyleft code can only be reused in copyleft code</li>
-<li>permissive code can be reused almost anywhere</li>
-<li>proprietary code may have restrictions (frequently
-noncommercial)</li>
-</ul></li>
-</ul>
-<p>You can check the licenses of your code’s dependencies for various
-languages:</p>
-<ul>
-<li><a href="https://github.com/EmbarkStudios/cargo-about">Rust</a></li>
-<li><a href="https://pypi.org/project/pip-licenses/">Python</a></li>
-<li><a href="https://www.npmjs.com/package/license-checker">Javascript</a></li>
+<li>Permissive licenses are easier to use and understand</li>
+<li>Copyleft licenses encourage publicly sharing changes and have
+broader legal protections (in theory)</li>
 </ul>
 </section>
 <section id="how-to-apply-a-license" class="slide level2">
@@ -686,6 +651,60 @@ to you in the interface.</li>
 <p>Make sure your plans on how to use the code fit the license. If it is
 a dependency of your project, make sure your project is licensed under a
 compatible license.</p>
+</section>
+<section id="dependencies-and-using-other-peoples-code" class="slide level2">
+<h2>Dependencies and using other people’s code</h2>
+<ul>
+<li>License compatability: you must comply with the licenses of code you
+depend on</li>
+<li>Rule of thumb:
+<ul>
+<li>copyleft code can only be reused in copyleft code</li>
+<li>permissive code can be reused almost anywhere</li>
+<li>proprietary code may have restrictions (frequently
+noncommercial)</li>
+</ul></li>
+</ul>
+<p>You can check the licenses of your code’s dependencies for various
+languages:</p>
+<ul>
+<li><a href="https://github.com/EmbarkStudios/cargo-about">Rust</a></li>
+<li><a href="https://pypi.org/project/pip-licenses/">Python</a></li>
+<li><a href="https://www.npmjs.com/package/license-checker">Javascript</a></li>
+</ul>
+</section>
+<section id="contributing-to-an-existing-project" class="slide level2">
+<h2>Contributing to an existing project</h2>
+<ul>
+<li>Review the license</li>
+<li>Read the contributor agreements, if there are any. You may be
+required to assign your copyright to the copyright holder for them to
+use your contributions and enforce the license.</li>
+</ul>
+</section>
+<section id="example-contributor-agreements" class="slide level2">
+<h2>Example contributor agreements:</h2>
+<ul>
+<li><p>To contribute to GNU Emacs, you must assign your copyright to the
+Free Software Foundation.</p></li>
+<li><p><a href="https://developercertificate.org/">Developer Certificate
+of Origin</a> (DCO): Used by the Linux kernel. In brief, the certificate
+verifies that the developer wrote the open-source changes, and allows
+the project to use them in a way consistent with the license.</p></li>
+<li><p><a href="https://wikipedia.org/wiki/Contributor_License_Agreement">Contributor
+License Agreement</a> (CLA): Typically used in corporate projects.
+Different CLAs may have different terms. Beware of terms that allow the
+owner of the project to relicense your patches, as they can relicense
+open-source code <em>you</em> own into proprietary code <em>they</em>
+own:</p>
+<blockquote>
+<p>When a CLA requires a contributor to assign unrestricted republishing
+rights to the project, contributed code can be relicensed at the
+discretion of the project, even when the CLA does not assign copyright
+to the project. <span class="citation" data-cites="CLA_relicensing_controversy">(<span>“Contributor License
+Agreement: Relicensing Controversy,”</span> n.d.)</span></p>
+</blockquote></li>
+</ul>
 </section></section>
 <section>
 <section id="non-foss-licenses" class="title-slide slide level1">
@@ -698,9 +717,7 @@ compatible license.</p>
 software nor open-source software.</p>
 <p>They may provide some of the freedoms and use terminology associated
 with FOSS, but do not fit all the requirements.</p>
-</section>
-<section id="proprietary-licenses" class="slide level2">
-<h2>Proprietary licenses</h2>
+<!-- ## Proprietary licenses -->
 <!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 <p>An important requirement of FOSS is that it can be used for any
 purpose (commercial or otherwise).</p>
@@ -716,11 +733,12 @@ purpose (commercial or otherwise).</p>
 <ul>
 <li>Releases are source available with a promise to open-source it
 later</li>
-<li>QT, MariaDB, Codon</li>
+<li><a href="https://mariadb.com/bsl11/">MariaDB</a>, <a href="https://github.com/exaloop/codon/blob/develop/LICENSE">Codon</a></li>
 </ul></li>
 <li>Server Side Public License (“copyleft”)
 <ul>
 <li>Copyleft extends much farther than the AGPL</li>
+<li><a href="https://www.mongodb.com/licensing/server-side-public-license">MongoDB</a></li>
 </ul></li>
 </ul>
 </section>
@@ -743,7 +761,7 @@ ethical purposes.</p>
 <ul>
 <li>JSON license: “The Software shall be used for Good, not Evil.”
 <ul>
-<li>What counts as an “ethical” usage?</li>
+<li>How do you define “good” or “evil”? What counts as “ethical”?</li>
 <li>Maybe unenforceable</li>
 </ul></li>
 </ul>
@@ -753,16 +771,27 @@ ethical purposes.</p>
 <h1>Practical and economic considerations</h1>
 <ul>
 <li>Whatever license you pick, consider the community</li>
-<li>If you need a legally-contentious or custom license, consult a
-lawyer</li>
-<li>Now you know the basics of software licensing</li>
 </ul>
 </section>
 <section id="economic-considerations" class="slide level2">
 <h2>Economic considerations</h2>
 <ul>
-<li>Making money from FOSS is difficult</li>
+<li>Making money from FOSS is difficult but possible</li>
+<li>One option is to sell commercial licenses and software support</li>
 </ul>
+</section>
+<section id="legal-considerations" class="slide level2">
+<h2>Legal considerations</h2>
+<p>Consult a lawyer if:</p>
+<ul>
+<li>You want a custom license</li>
+<li>You want to litigate a license violation</li>
+</ul>
+<p>Note: we (the authors) are not lawyers.</p>
+</section>
+<section id="the-end" class="slide level2">
+<h2>The end</h2>
+<p>Now you know the basics of software licensing!</p>
 </section></section>
 <section>
 <section id="bibliography" class="title-slide slide level1">
@@ -778,6 +807,10 @@ Project. <a href="https://www.gnu.org/philosophy/categories.html">https://www.gn
 </div>
 <div id="ref-ChooseALicense" class="csl-entry" role="doc-biblioentry">
 <span>“Choose an Open Source License.”</span> n.d. GitHub, Inc. <a href="https://choosealicense.com/">https://choosealicense.com/</a>.
+</div>
+<div id="ref-CLA_relicensing_controversy" class="csl-entry" role="doc-biblioentry">
+<span>“Contributor License Agreement: Relicensing Controversy.”</span>
+n.d. Wikimedia Foundation, Inc. <a href="https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy">https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy</a>.
 </div>
 <div id="ref-CCLicensesOpen" class="csl-entry" role="doc-biblioentry">
 <span>“Creative Commons 4.0 BY and BY-SA Licenses Approved Conformant
