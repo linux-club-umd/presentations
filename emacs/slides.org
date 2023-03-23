@@ -224,6 +224,9 @@ So many options!
   - Using movement shortcuts will select more text. Press =C-g= to stop
     selecting.
 - =C-z=, =C-x=, =C-c=, =C-v= for undo/cut/copy/paste
+- =C-S-z= and =C-y= for redo
+  - You can also undo an undo: Press =C-z=, then any non-undo key (like =C-g=), then =C-z=
+  - Older versions of Emacs did not have an undo key, you have to undo the undo or use an external package. Hooray Emacs 28!
 - Ctrl + left/right arrow to move by word
 - Right click for context menu
 - Save file: =C-x C-s=
