@@ -12,4 +12,8 @@ references:
     title: "Choose an open source license"
     URL: "https://choosealicense.com/"
     publisher: "GitHub, Inc."
+  - id: "CLA_relicensing_controversy"
+    title: "Contributor License Agreement: Relicensing controversy"
+    URL: "https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy"
+    publisher: "Wikimedia Foundation, Inc."
 ...
