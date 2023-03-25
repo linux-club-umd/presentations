@@ -101,7 +101,8 @@ Proprietary code places restrictions on these freedoms.
 - GPLv2: [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING)
 - GPLv3: [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE)
   - provides additional clarifications on license compatibility, digital rights management, and patents
-- AGPL: [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING)
+- AGPL: [Canvas LMS](https://github.com/instructure/canvas-lms/blob/master/LICENSE)
+<!-- [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING) -->
   - requires servers hosting the code to release their source code
 - LGPL: [QT](https://www.qt.io/licensing/open-source-lgpl-obligations) (most of it)
   - most of it can be linked in proprietary projects without source redistribution
