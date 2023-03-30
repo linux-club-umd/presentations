@@ -118,8 +118,8 @@ Emacs is:
   - Emacs is configured with a full programming language, can easily
     add your own functions.
 
-Emacs has a long history, but nowadays the most widely used version is
-GNU Emacs.
+Emacs has a long history (47 years; 38 years for GNU Emacs), but
+nowadays the most widely used version is GNU Emacs.
 
 ** Dispelling the CMSC216 myth
 If you attend the University of Maryland and take CMSC216, you will use Emacs.
@@ -155,7 +155,7 @@ When talking about keyboard shortcuts, Emacs would write the above as =C-M-S-x=.
 
 - 'C' stands for control/ctrl.
 - 'M' stands for "meta". For historical reasons Emacs talks about a
-"meta" key. Nowadays this usually means "Alt".
+  "meta" key. Nowadays this usually means "Alt".
 - 'S' stands for shift.
 
 ** First things first: Stopping/quitting
@@ -211,7 +211,7 @@ shortcut.
 
 So many options!
 
-- You can click on the toolbar to open files. File > Open File...
+- You can click on the menu bar to open files. File > Open File...
 - If you set Emacs as your default editor, then you can open files in
   Emacs from your operating system's file manager / file explorer.
 - Open a file browser in Emacs: =M-x dired=.
@@ -407,14 +407,15 @@ M-x command name
 If you use a command frequently, you can save time by binding a key to it:
 
 - =M-x global-set-key= : you can run this interactively to try new keybindings
-- =bind-key= : a macro that saves your list of custom keybinds. View the saved ones with =M-x describe-personal-keybindings=
-
+- =bind-key= : an ELisp macro that saves your list of custom keybinds.
+  View the saved ones with =M-x describe-personal-keybindings=
 
 There are some other interesting quirks for binding symbols and tab characters, read the manual for that.
 
+** Binding keys
 Additional, the F5-F9 keys are reserved for users. Packages will typically leave these keys alone for you to bind.
 
-For example, you might press =C-x= and =C-c= a lot, so you could bind F5 to =C-x= and F6 to =C-c=.
+For example, you could bind =F5= to =M-x compile= to more quickly compile/run code.
 
 There are other shortcuts that might not be used, =free-keys= lists free keys for shortcuts
 
@@ -485,7 +486,6 @@ Completions!
     both created from the same Org document.
 - [[https://magit.vc/][Magit]], the magical Git interface
   - A high-quality interface for the Git version control system.
-- eww, the Emacs web browser
 
 ** If you love Emacs so much, why don't you marry it?
 Here are just a few examples of things Emacs can do beyond editing text.
@@ -494,6 +494,8 @@ Here are just a few examples of things Emacs can do beyond editing text.
   - [[https://www.masteringemacs.org/article/running-shells-in-emacs-overview][Running Shells and Terminal Emulators in Emacs]]
 - Email: [[https://www.gnus.org/][GNUS]], [[https://www.djcbsoftware.nl/code/mu/mu4e/index.html][mu4e]], and [[https://www.emacswiki.org/emacs/CategoryMail][more]]
 - Instant messaging client for Slack, IRC, Matrix, etc.
+- eww, the Emacs web browser
+- Music player
 
 * (extra) Plain fun
 ** Plain fun
