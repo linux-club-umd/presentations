@@ -10,7 +10,6 @@ colortheme: "metropolis"
 ...
 
 # Introduction
-## Presenters
 ## What this presentation is
 
 We intend that after this presentation you:
