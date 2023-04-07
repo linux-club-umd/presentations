@@ -5,7 +5,8 @@ PANDOC_OPTS += --bibliography references.yaml --citeproc
 all: slides.pdf slides.html
 
 slides.pdf: slides.md references.yaml
-	pandoc slides.md -t beamer -o slides.pdf $(PANDOC_OPTS) --standalone
+	pandoc slides.md -t beamer -o slides.pdf $(PANDOC_OPTS) --standalone \
+		-V urlcolor=blue
 
 slides.html: slides.md references.yaml
 	pandoc slides.md -t revealjs -o slides.html $(PANDOC_OPTS) --standalone --embed-resources

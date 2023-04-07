@@ -238,14 +238,17 @@ are not free or open source. [@CCLicensesOpen]
 
 This is because Non-Commercial licenses limit usage to Non-Commercial usage only.
 
-## Ethical-source license
+## Ethical Source license
 
-Ethical source licenses have provisions that restrict uses for ethical purposes.
+Ethical Source[^1] licenses[^2] have provisions that restrict uses for ethical purposes.
 
 - JSON license: "The Software shall be used for Good, not Evil."
   - Considered non-free by multiple organizations because of this restriction [@JSONLicense]
   - How do you define "good" or "evil"? What counts as "ethical"?
   - Maybe unenforceable
+
+[^1]: <https://ethicalsource.dev/>
+[^2]: <https://ethicalsource.dev/licenses/>
 
 # Practical and economic considerations
 
