@@ -54,11 +54,12 @@ margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
 div.csl-bib-body { }
 div.csl-entry {
 clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
 margin-left:2em;
 text-indent:-2em;
 }
@@ -72,8 +73,7 @@ padding-left:1em;
 }
 div.csl-indent {
 margin-left: 2em;
-}
-</style>
+} </style>
   <style type="text/css">
 @font-face {
 font-family: 'Source Sans Pro';
@@ -412,7 +412,7 @@ background-color: var(--r-background-color);
 <section>
 <section id="introduction" class="title-slide slide level1">
 <h1>Introduction</h1>
-
+<p>This presentation is brought to you by the <a href="https://linuxclub.umd.edu/">Linux Club at UMD</a>.</p>
 </section>
 <section id="what-this-presentation-is" class="slide level2">
 <h2>What this presentation is</h2>
@@ -457,8 +457,6 @@ restrictions.</li>
 </section>
 <section id="free-and-open-source-software-foss" class="slide level2">
 <h2>Free and Open Source Software (FOSS)</h2>
-<!-- TODO: Define proprietary as well, maybe put it here. -->
-<!-- TODO: Maybe have something about the history here, if it doesn't take up too much time. -->
 <p>The free software movement and the open-source software movement are
 separate but closely related.</p>
 <p>Most licenses that fit the free software definition also fit the
@@ -518,7 +516,10 @@ Source License,”</span> n.d.)</span></p>
 <ul>
 <li>MIT: <a href="https://github.com/nodejs/node/blob/main/LICENSE">NodeJS</a></li>
 <li>BSD: <a href="https://github.com/scikit-learn/scikit-learn/blob/main/COPYING">scikit-learn</a></li>
-<li>Apache: <a href="https://github.com/Qiskit/qiskit/blob/master/LICENSE.txt">Qiskit</a></li>
+<li>Apache: <a href="https://github.com/Qiskit/qiskit/blob/master/LICENSE.txt">Qiskit</a>
+<ul>
+<li>has additional terms on patent rights</li>
+</ul></li>
 <li>Unlicense: <a href="https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE">yt-dlp</a></li>
 </ul>
 </section></section>
@@ -559,7 +560,6 @@ rights management, and patents</li>
 </ul></li>
 <li>AGPL: <a href="https://github.com/instructure/canvas-lms/blob/master/LICENSE">Canvas
 LMS</a>
-<!-- [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING) -->
 <ul>
 <li>requires servers hosting the code to release their source code</li>
 </ul></li>
@@ -607,7 +607,7 @@ protected. Patents would be required for that.</p>
 <li>Your license conveys to the community how you intend your project to
 be used and shared</li>
 <li>Permissive licenses are easier to use and understand</li>
-<li>Copyleft licenses encourage publicly sharing changes and have
+<li>Copyleft licenses encourage publicly sharing changes, and have
 broader legal protections (in theory)</li>
 </ul>
 </section>
@@ -655,7 +655,7 @@ compatible license.</p>
 <section id="dependencies-and-using-other-peoples-code" class="slide level2">
 <h2>Dependencies and using other people’s code</h2>
 <ul>
-<li>License compatability: you must comply with the licenses of code you
+<li>License compatibility: you must comply with the licenses of code you
 depend on</li>
 <li>Rule of thumb:
 <ul>
@@ -668,9 +668,9 @@ noncommercial)</li>
 <p>You can check the licenses of your code’s dependencies for various
 languages:</p>
 <ul>
-<li><a href="https://github.com/EmbarkStudios/cargo-about">Rust</a></li>
-<li><a href="https://pypi.org/project/pip-licenses/">Python</a></li>
-<li><a href="https://www.npmjs.com/package/license-checker">Javascript</a></li>
+<li>Rust: <a href="https://github.com/EmbarkStudios/cargo-about">cargo-about</a></li>
+<li>Python: <a href="https://pypi.org/project/pip-licenses/">pip-licenses</a></li>
+<li>JavaScript: <a href="https://www.npmjs.com/package/license-checker">license-checker</a></li>
 </ul>
 </section>
 <section id="contributing-to-an-existing-project" class="slide level2">
@@ -693,10 +693,10 @@ verifies that the developer wrote the open-source changes, and allows
 the project to use them in a way consistent with the license.</p></li>
 <li><p><a href="https://wikipedia.org/wiki/Contributor_License_Agreement">Contributor
 License Agreement</a> (CLA): Typically used in corporate projects.
-Different CLAs may have different terms. Beware of terms that allow the
-owner of the project to relicense your patches, as they can relicense
-open-source code <em>you</em> own into proprietary code <em>they</em>
-own:</p>
+Different CLAs may have different terms. Take note of terms that allow
+the owner of the project to relicense your patches, as they can
+relicense open-source code <em>you</em> own into proprietary code
+<em>they</em> own:</p>
 <blockquote>
 <p>When a CLA requires a contributor to assign unrestricted republishing
 rights to the project, contributed code can be relicensed at the
@@ -718,7 +718,6 @@ software nor open-source software.</p>
 <p>They may provide some of the freedoms and use terminology associated
 with FOSS, but do not fit all the requirements.</p>
 <!-- ## Proprietary licenses -->
-<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 <p>An important requirement of FOSS is that it can be used for any
 purpose (commercial or otherwise).</p>
 <ul>
@@ -753,6 +752,8 @@ their designs.</p>
 versions of these licenses are not free or open source. <span class="citation" data-cites="CCLicensesOpen">(<span>“Creative Commons
 4.0 BY and BY-SA Licenses Approved Conformant with the Open
 Definition,”</span> n.d.)</span></p>
+<p>This is because Non-Commercial licenses limit usage to Non-Commercial
+usage only.</p>
 </section>
 <section id="ethical-source-license" class="slide level2">
 <h2>Ethical Source license</h2>
@@ -761,6 +762,9 @@ have provisions that restrict uses for ethical purposes.</p>
 <ul>
 <li>JSON license: “The Software shall be used for Good, not Evil.”
 <ul>
+<li>Considered non-free by multiple organizations because of this
+restriction <span class="citation" data-cites="JSONLicense">(<span>“JSON
+Non Free License,”</span> n.d.)</span></li>
 <li>How do you define “good” or “evil”? What counts as “ethical”?</li>
 <li>Maybe unenforceable</li>
 </ul></li>
@@ -770,15 +774,10 @@ have provisions that restrict uses for ethical purposes.</p>
 <section id="practical-and-economic-considerations" class="title-slide slide level1">
 <h1>Practical and economic considerations</h1>
 <ul>
-<li>Whatever license you pick, consider the community</li>
-</ul>
-</section>
-<section id="economic-considerations" class="slide level2">
-<h2>Economic considerations</h2>
-<ul>
 <li>Making money from FOSS is difficult but possible</li>
 <li>One option is to sell commercial licenses and software support</li>
 </ul>
+<p>Further reading: <a href="https://un.curl.dev/">Uncurled</a></p>
 </section>
 <section id="legal-considerations" class="slide level2">
 <h2>Legal considerations</h2>
@@ -788,6 +787,8 @@ have provisions that restrict uses for ethical purposes.</p>
 <li>You want to litigate a license violation</li>
 </ul>
 <p>Note: we (the authors) are not lawyers.</p>
+<p>Further reading: <a href="https://www.morganlewis.com/-/media/files/publication/presentation/webinar/2022/open-source-software-and-litigation-risks.pdf">Open
+Source Software Litigation and Risks</a></p>
 </section>
 <section id="the-end" class="slide level2">
 <h2>The end</h2>
@@ -800,21 +801,24 @@ have provisions that restrict uses for ethical purposes.</p>
 </section>
 <section id="bibliography-1" class="slide level2">
 <h2>Bibliography</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-CategoriesOfFreeAndNonfreeSoftware" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-CategoriesOfFreeAndNonfreeSoftware" class="csl-entry" role="listitem">
 <span>“Categories of Free and Nonfree Software.”</span> n.d. GNU
 Project. <a href="https://www.gnu.org/philosophy/categories.html">https://www.gnu.org/philosophy/categories.html</a>.
 </div>
-<div id="ref-ChooseALicense" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ChooseALicense" class="csl-entry" role="listitem">
 <span>“Choose an Open Source License.”</span> n.d. GitHub, Inc. <a href="https://choosealicense.com/">https://choosealicense.com/</a>.
 </div>
-<div id="ref-CLA_relicensing_controversy" class="csl-entry" role="doc-biblioentry">
+<div id="ref-CLA_relicensing_controversy" class="csl-entry" role="listitem">
 <span>“Contributor License Agreement: Relicensing Controversy.”</span>
 n.d. Wikimedia Foundation, Inc. <a href="https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy">https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy</a>.
 </div>
-<div id="ref-CCLicensesOpen" class="csl-entry" role="doc-biblioentry">
+<div id="ref-CCLicensesOpen" class="csl-entry" role="listitem">
 <span>“Creative Commons 4.0 BY and BY-SA Licenses Approved Conformant
 with the Open Definition.”</span> n.d. Creative Commons. <a href="https://creativecommons.org/2013/12/27/creative-commons-4-0-by-and-by-sa-licenses-approved-conformant-with-the-open-definition/">https://creativecommons.org/2013/12/27/creative-commons-4-0-by-and-by-sa-licenses-approved-conformant-with-the-open-definition/</a>.
+</div>
+<div id="ref-JSONLicense" class="csl-entry" role="listitem">
+<span>“JSON Non Free License.”</span> n.d. Debian QA. <a href="https://wiki.debian.org/qa.debian.org/jsonevil">https://wiki.debian.org/qa.debian.org/jsonevil</a>.
 </div>
 </div>
 </section></section>

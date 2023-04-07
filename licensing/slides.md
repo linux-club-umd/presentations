@@ -7,6 +7,7 @@ author:
 - John Evans
 - Jeffrey Fisher
 colortheme: "metropolis"
+aspectratio: 169
 ...
 
 # Introduction
