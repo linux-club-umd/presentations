@@ -10,6 +10,9 @@ colortheme: "metropolis"
 ...
 
 # Introduction
+
+This presentation is brought to you by the [Linux Club at UMD](https://linuxclub.umd.edu/).
+
 ## What this presentation is
 
 We intend that after this presentation you:
@@ -79,6 +82,7 @@ For this presentation, "proprietary" means code that does not provide all of the
 - MIT: [NodeJS](https://github.com/nodejs/node/blob/main/LICENSE)
 - BSD: [scikit-learn](https://github.com/scikit-learn/scikit-learn/blob/main/COPYING)
 - Apache: [Qiskit](https://github.com/Qiskit/qiskit/blob/master/LICENSE.txt)
+  - has additional terms on patent rights
 - Unlicense: [yt-dlp](https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE)
 
 # Copyleft licenses
@@ -99,7 +103,6 @@ For this presentation, "proprietary" means code that does not provide all of the
 - GPLv3: [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE)
   - provides additional clarifications on license compatibility, digital rights management, and patents
 - AGPL: [Canvas LMS](https://github.com/instructure/canvas-lms/blob/master/LICENSE)
-<!-- [RStudio](https://github.com/rstudio/rstudio/blob/main/COPYING) -->
   - requires servers hosting the code to release their source code
 - LGPL: [QT](https://www.qt.io/licensing/open-source-lgpl-obligations) (most of it)
   - most of it can be linked in proprietary projects without source redistribution
@@ -133,7 +136,7 @@ would be required for that.
 
 - Your license conveys to the community how you intend your project to be used and shared
 - Permissive licenses are easier to use and understand
-- Copyleft licenses encourage publicly sharing changes and have broader legal protections (in theory)
+- Copyleft licenses encourage publicly sharing changes, and have broader legal protections (in theory)
 
 ## How to apply a license
 
@@ -172,7 +175,7 @@ a compatible license.
 
 ## Dependencies and using other people's code
 
-- License compatability: you must comply with the licenses of code you depend on
+- License compatibility: you must comply with the licenses of code you depend on
 - Rule of thumb:
   - copyleft code can only be reused in copyleft code
   - permissive code can be reused almost anywhere
@@ -180,9 +183,9 @@ a compatible license.
 
 You can check the licenses of your code's dependencies for various languages:
 
-- [Rust](https://github.com/EmbarkStudios/cargo-about)
-- [Python](https://pypi.org/project/pip-licenses/)
-- [Javascript](https://www.npmjs.com/package/license-checker)
+- Rust: [cargo-about](https://github.com/EmbarkStudios/cargo-about)
+- Python: [pip-licenses](https://pypi.org/project/pip-licenses/)
+- JavaScript: [license-checker](https://www.npmjs.com/package/license-checker)
 
 ## Contributing to an existing project
 
@@ -193,7 +196,7 @@ You can check the licenses of your code's dependencies for various languages:
 
 - To contribute to GNU Emacs, you must assign your copyright to the Free Software Foundation.
 - [Developer Certificate of Origin](https://developercertificate.org/) (DCO): Used by the Linux kernel. In brief, the certificate verifies that the developer wrote the open-source changes, and allows the project to use them in a way consistent with the license.
-- [Contributor License Agreement](https://wikipedia.org/wiki/Contributor_License_Agreement) (CLA): Typically used in corporate projects. Different CLAs may have different terms. Beware of terms that allow the owner of the project to relicense your patches, as they can relicense open-source code _you_ own into proprietary code _they_ own:
+- [Contributor License Agreement](https://wikipedia.org/wiki/Contributor_License_Agreement) (CLA): Typically used in corporate projects. Different CLAs may have different terms. Take note of terms that allow the owner of the project to relicense your patches, as they can relicense open-source code _you_ own into proprietary code _they_ own:
 
   > When a CLA requires a contributor to assign unrestricted republishing rights to the project, contributed code can be relicensed at the discretion of the project, even when the CLA does not assign copyright to the project. [@CLA_relicensing_controversy]
 
@@ -208,8 +211,6 @@ They may provide some of the freedoms and use terminology associated
 with FOSS, but do not fit all the requirements.
 
 <!-- ## Proprietary licenses -->
-
-<!-- TODO: reorganize non-foss licenses into further categories: noncommercial, unenforceable -->
 
 An important requirement of FOSS is that it can be used for any purpose (commercial or otherwise).
 
@@ -235,11 +236,14 @@ available for users to select from when uploading their designs.
 While it is not well explained on these sites, the Non-Commercial versions of these licenses
 are not free or open source. [@CCLicensesOpen]
 
+This is because Non-Commercial licenses limit usage to Non-Commercial usage only.
+
 ## Ethical Source license
 
 Ethical Source[^1] licenses[^2] have provisions that restrict uses for ethical purposes.
 
 - JSON license: "The Software shall be used for Good, not Evil."
+  - Considered non-free by multiple organizations because of this restriction [@JSONLicense]
   - How do you define "good" or "evil"? What counts as "ethical"?
   - Maybe unenforceable
 
@@ -248,12 +252,10 @@ Ethical Source[^1] licenses[^2] have provisions that restrict uses for ethical p
 
 # Practical and economic considerations
 
-- Whatever license you pick, consider the community
-
-## Economic considerations
-
 - Making money from FOSS is difficult but possible
 - One option is to sell commercial licenses and software support
+
+Further reading: [Uncurled](https://un.curl.dev/)
 
 ## Legal considerations
 
@@ -263,6 +265,8 @@ Consult a lawyer if:
 - You want to litigate a license violation
 
 Note: we (the authors) are not lawyers.
+
+Further reading: [Open Source Software Litigation and Risks](https://www.morganlewis.com/-/media/files/publication/presentation/webinar/2022/open-source-software-and-litigation-risks.pdf)
 
 ## The end
 
