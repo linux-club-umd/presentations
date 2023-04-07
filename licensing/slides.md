@@ -40,8 +40,6 @@ want to use a custom or less-understood license, you should probably consult a l
 - License = Agreement that grants permissions, possibly with some restrictions.
 
 ## Free and Open Source Software (FOSS)
-<!-- TODO: Define proprietary as well, maybe put it here. -->
-<!-- TODO: Maybe have something about the history here, if it doesn't take up too much time. -->
 
 The free software movement and the open-source software movement are
 separate but closely related.
