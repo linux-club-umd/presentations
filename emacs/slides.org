@@ -102,9 +102,7 @@ which the majority of our audience likely will be.
 Emacs is:
 
 - a text editor
-- customizable
-  - There are many settings available without writing actual code, and
-    small changes require little code.
+- customizable, many settings available
 - infinitely extensible
   - Thousands of plugins/extensions ("packages").
   - Emacs is configured with a full programming language, can easily
@@ -253,6 +251,10 @@ Commands starting with =describe-=.
 
 You can also press =F1= instead of =C-h=, so =C-h k= becomes =F1 k=.
 
+** Manual
+- =M-x info= -- Open the manual
+- Menubar: =Help > Search Documentation=
+
 * Demo
 
 * Demo details :noexport:
@@ -320,11 +322,20 @@ Here are just a few examples of things Emacs can do beyond editing text.
 - [[https://karthinks.com/software/batteries-included-with-emacs/][Batteries included with Emacs]] : Underrated built-in features.
   - [[https://karthinks.com/software/more-batteries-included-with-emacs/][More batteries included with Emacs]]
 
+** Beginner help
+- [[https://www.masteringemacs.org/article/beginners-guide-to-emacs][An Emacs Tutorial: Beginner's Guide to Emacs]]
+- [[https://www.masteringemacs.org/][Mastering Emacs]]. Mickey Petersen's website and book with very high-quality information.
+
 ** Reference
 - [[https://www.gnu.org/software/emacs/manual/index.html][GNU Emacs manuals]]
   - Also available inside of Emacs. =M-x info-emacs-manual= or =C-M-h r=
 - [[https://www.emacswiki.org/][EmacsWiki]]
 - https://www2.lib.uchicago.edu/keith/emacs/
+* (reference) Things to customize right away
+** Changing the default font size
+- Run the command =M-x customize-face=
+- You will be prompted for which font face to customize. Type "default".
+- Change the "Height" value.
 * (reference) Miscellaneous
 ** Modeline
 
@@ -335,7 +346,6 @@ Aka the status bar. We use the [[https://github.com/seagle0128/doom-modeline][Do
 - Major mode: Left click to access major mode commands, right click to access minor mode commands
 - Git integration: Click to access VC (version-control) commands, like viewing commit history
 - And more goodies we won't cover here
-
 * (reference) Beginning our configuration
 ** Emacs Lisp code
 #+begin_src elisp :tangle no
