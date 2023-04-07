@@ -237,13 +237,16 @@ available for users to select from when uploading their designs.
 While it is not well explained on these sites, the Non-Commercial versions of these licenses
 are not free or open source. [@CCLicensesOpen]
 
-## Ethical-source license
+## Ethical Source license
 
-Ethical source licenses have provisions that restrict uses for ethical purposes.
+Ethical Source[^1] licenses[^2] have provisions that restrict uses for ethical purposes.
 
 - JSON license: "The Software shall be used for Good, not Evil."
   - How do you define "good" or "evil"? What counts as "ethical"?
   - Maybe unenforceable
+
+[^1]: <https://ethicalsource.dev/>
+[^2]: <https://ethicalsource.dev/licenses/>
 
 # Practical and economic considerations
 
