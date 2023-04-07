@@ -97,14 +97,6 @@ Not for Emacs 28. It's very laggy on my computer. For Emacs 29, there's pixel-sc
 try not to use quote for lists, use =(list)= instead if possible. =(list)=
 is hopefully more readable and approachable for people new to Lisp,
 which the majority of our audience likely will be.
-** Famliarity
-*** Use popular notation for keyboard shortcuts.
-# TODO: Jeff: I'm unsure about this. We could introduce it at the
-# start, then use Emacs notation throughout the presentation.
-# I'm not sure which option is better.
-Can mention Emacs notation (=C-x=), but should use a popular notation
-throughout the presentation (=Ctrl-x=).
-
 * What is Emacs?
 ** What is Emacs?
 Emacs is:
@@ -131,13 +123,6 @@ Running graphical programs over a network is slow and unresponsive.
 Emacs is comfortably fast when it is running on your computer.
 
 Also the version of Emacs installed on those servers is old.
-
-** About this presentation
-Emacs is infinitely customizable. We can only cover a very small part
-of that infinity, and that part is biased by our experiences.
-
-At the end of the day this presentation is really about how we use
-Emacs and how we think you /might/ use Emacs.
 
 ** What to expect from this presentation
 - Hopefully, with the base config and knowledge from this presentation
@@ -272,6 +257,8 @@ You can also press =F1= instead of =C-h=, so =C-h k= becomes =F1 k=.
 
 * Demo details :noexport:
 
+** Bind M-o to other-window with =M-x global-set-key=
+
 ** Open remote file with TRAMP
 If it fails for whatever reason, open the files locally.
 
@@ -294,13 +281,6 @@ Use Magit to commit changes.
 
 * (optional) Adventures
 ** Adventures that await you, if you wish
-# TODO : Do we want to mention Doom, Spacemacs, or any other pre-made
-# configurations? If so, which subset of them do we want to mention?
-#
-# Jeff: Personally I have used Doom and found it to be pretty good, but
-# now I prefer a smaller custom configuration I can more easily
-# understand.
-# Skylar: Yes mention Doom/Spacemacs
 - TRAMP : Transparent Remote (file) Access, Multiple Protocol
   - Similar to VS Code's Remote SSH plugin.
 - evil-mode: Emulates Vim keybindings.
@@ -312,6 +292,9 @@ Use Magit to commit changes.
     both created from the same Org document.
 - [[https://magit.vc/][Magit]], the magical Git interface
   - A high-quality interface for the Git version control system.
+- Pre-configured Emacs kits.
+  - [[https://github.com/doomemacs/doomemacs][Doom Emacs]]. Can personally recommend
+  - [[https://www.spacemacs.org/][Spacemacs]]
 
 ** If you love Emacs so much, why don't you marry it?
 Here are just a few examples of things Emacs can do beyond editing text.
@@ -323,9 +306,9 @@ Here are just a few examples of things Emacs can do beyond editing text.
 - eww, the Emacs web browser
 - Music player
 
-* (extra) Plain fun
-** Plain fun
-- artist-mode lets you draw text-based art.
+* (extra) Fun
+** Fun
+- =M-x artist-mode= lets you draw text-based art.
 - =M-x strokes-help= : Control Emacs with mouse gestures.
 - =M-x follow-mode= : Enable this and open multiple copies of a buffer
   side-by-side with =C-x 3= to read a buffer across multiple columns.
