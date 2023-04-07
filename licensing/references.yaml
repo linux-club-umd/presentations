@@ -16,4 +16,8 @@ references:
     title: "Contributor License Agreement: Relicensing controversy"
     URL: "https://en.wikipedia.org/wiki/Contributor_License_Agreement?lang=en#Relicensing_controversy"
     publisher: "Wikimedia Foundation, Inc."
+  - id: "JSONLicense"
+    title: "JSON non free license"
+    URL: "https://wiki.debian.org/qa.debian.org/jsonevil"
+    publisher: "Debian QA"
 ...
