@@ -1,27 +1,27 @@
 #include <stdio.h>
 
 int
-add(int x, int y, int z)
+add(int x, int y)
 {
-    return x + y + z;
+    return x + y;
 }
 
 int
 main(void)
 {
-    printf("%d\n", add(1, 2, 0));
+    printf("%d\n", add(1, 2));
 
     // ...
 
-    printf("%d\n", add(3, 4, 1));
+    printf("%d\n", add(3, 4));
 
     // ...
 
-    printf("%d\n", add(5, 6, 2));
+    printf("%ld\n", add(5, 6));
 
     // ...
 
-    printf("%d\n", add(7, 8, 3));
+    printf("%d\n", add(7, 8));
 
     // ...
 
