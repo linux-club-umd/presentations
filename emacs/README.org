@@ -13,7 +13,7 @@ In this folder there is a file called =init.el=. Move it to your =.emacs.d= fold
 After doing this, when you open Emacs it should automatically load the configuration. There is a dark theme by default, and it may have messages at the bottom about connecting to servers to download packages.
 
 *** Unix (Linux/Mac)
-Run these commands in the terminal. If you don't have =curl=, just download or copy the contents of =init.el=, and put them in the file =~/.emacs.d/init.el=.
+Run these commands in the terminal. If you don't have =curl=, then download or copy the contents of =init.el=, and put them in the file =~/.emacs.d/init.el=.
 
 #+begin_src sh
   mkdir -p ~/.emacs.d
