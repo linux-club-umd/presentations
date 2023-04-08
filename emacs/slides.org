@@ -1,3 +1,4 @@
+
 #+TITLE: Introduction to the Emacs text editor
 #+PROPERTY: header-args :tangle init.el :noweb yes
 #+AUTHOR: Skylar Chan; Jeffrey Fisher
@@ -153,7 +154,7 @@ Note: =C-g= means =Control+g=, which means hold control/ctrl and press
 help you get accustomed to it.
 
 ** First things first: Running commands
-=M-x= (that's hold Alt+x) lets you execute commands by their name.
+=M-x= (that's =Alt+x=) lets you execute commands by their name.
 
 Every action in Emacs executes a command, even when you press
 simple letter keys. And you can always run that command manually by
@@ -188,10 +189,6 @@ screen has many common commands, and will also tell you the keyboard
 shortcut.
 
 ** Opening files
-# TODO : Best way to explain this one? New programmers may not have
-# worked with file paths yet, and I don't know if Emacs can or should
-# open the system file dialog. Maybe could teach using Dired?
-
 So many options!
 
 - You can click on the menu bar to open files. File > Open File...
@@ -218,20 +215,6 @@ So many options!
 - Save as: =C-x C-w=, =M-x write-file=
 - Find / search file contents: =C-s=
 - Go to start/end of file: =M-<=, =M->=
-
-** Viewing multiple buffers at the same time
-
-1. Split the window: =C-x 2= splits horizontally, =C-x 3= splits vertically
-2. Scroll down one window. The view changes in that window only.
-3. Use =C-x b= to switch buffers. You can also click on the menubar: Buffers > select buffer, or press Ctrl-left click
-
-** Window shortcuts
-
-- Meta (Alt) plus arrow keys: move between windows
-- Meta and Shift plus arrow keys: swap the position of windows
-- =C-x 2=, =C-x 3= = Split horizontally and vertically
-- =C-x 0= = Delete/close focused window
-- =C-x 1= = Delete all other windows except focused window
 
 * Getting help
 ** Self-documenting
@@ -267,8 +250,6 @@ If it fails for whatever reason, open the files locally.
 ** Run M-x compile
 Show errors.
 
-Click on error to jump to location, then show M-g M-n and M-g M-p to go to next/previous error.
-
 ** Fix the error(s) and recompile
 
 ** Simple refactor
@@ -276,10 +257,22 @@ Change the arguments for a function.
 
 Run M-x compile, jump to error. Show callsites need to be changed.
 
+Click on error to jump to location, then show M-g M-n and M-g M-p to go to next/previous error.
+
+Use =M-x regexp-builder= to make the regex for Occur.
+
 Run M-x occur, then use editable Occur with a macro to update all callsites.
 
 ** Git
 Use Magit to commit changes.
+
+* The End?
+
+** Revisit the slides
+#+ATTR_LATEX: :width 0.65\textwidth
+[[./img/qr.png]]
+
+https://linuxclub.umd.edu/bitcamp/emacs
 
 * (optional) Adventures
 ** Adventures that await you, if you wish
@@ -301,7 +294,7 @@ Use Magit to commit changes.
 ** If you love Emacs so much, why don't you marry it?
 Here are just a few examples of things Emacs can do beyond editing text.
 
-- Shells / terminals: =M-x shell=, =eshell=, =term=, =ansi=term=
+- Shells / terminals: =M-x shell=, =eshell=, =term=, =ansi-term=
   - [[https://www.masteringemacs.org/article/running-shells-in-emacs-overview][Running Shells and Terminal Emulators in Emacs]]
 - Email: [[https://www.gnus.org/][GNUS]], [[https://www.djcbsoftware.nl/code/mu/mu4e/index.html][mu4e]], and [[https://www.emacswiki.org/emacs/CategoryMail][more]]
 - Instant messaging client for Slack, IRC, Matrix, etc.
@@ -325,6 +318,9 @@ Here are just a few examples of things Emacs can do beyond editing text.
 ** Beginner help
 - [[https://www.masteringemacs.org/article/beginners-guide-to-emacs][An Emacs Tutorial: Beginner's Guide to Emacs]]
 - [[https://www.masteringemacs.org/][Mastering Emacs]]. Mickey Petersen's website and book with very high-quality information.
+- Built-in tutorial: =C-h t=, =M-x help-with-tutorial=
+  - Great for practicing keyboard shortcuts.
+  - Some
 
 ** Reference
 - [[https://www.gnu.org/software/emacs/manual/index.html][GNU Emacs manuals]]
@@ -527,6 +523,13 @@ for configuration that we're not sure how to fit into the slides.
   ;; enable keybind support
   ;; you can run `M-x describe-personal-keybindings` to list custom keys'
   (use-package bind-key)
+
+  ;; Nicer commands for uppercasing, lowercasing, and capitalizing. If you have
+  ;; text selected, they will operate on all of the selected text. Otherwise, they
+  ;; will operate on a single word at a time.
+  (bind-key (kbd "M-u") 'upcase-dwim)
+  (bind-key (kbd "M-l") 'downcase-dwim)
+  (bind-key (kbd "M-c") 'capitalize-dwim)
 
   ;; delight hides entries from the modeline
   ;; useful for reducing clutter

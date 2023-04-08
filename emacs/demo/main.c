@@ -25,5 +25,9 @@ main(void)
 
     // ...
 
+    printf("We\n");
+    printf("Are\n");
+    printf("Done\n");
+
     return 0;
 }

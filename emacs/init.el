@@ -36,6 +36,13 @@
 ;; you can run `M-x describe-personal-keybindings` to list custom keys'
 (use-package bind-key)
 
+;; Nicer commands for uppercasing, lowercasing, and capitalizing. If you have
+;; text selected, they will operate on all of the selected text. Otherwise, they
+;; will operate on a single word at a time.
+(bind-key (kbd "M-u") 'upcase-dwim)
+(bind-key (kbd "M-l") 'downcase-dwim)
+(bind-key (kbd "M-c") 'capitalize-dwim)
+
 ;; delight hides entries from the modeline
 ;; useful for reducing clutter
 (use-package delight)
