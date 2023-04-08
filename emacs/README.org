@@ -4,3 +4,40 @@ Learn the basics of using and configuring Emacs, along with a few advanced
 features. Emacs is a powerful and infinitely extensible text editor with some
 quirks. We provide a sample configuration file as a starting point to make your
 Emacs experience easier.
+** Installing Emacs:
+Instructions and downloads for installing Emacs are available here: https://www.gnu.org/software/emacs/.
+
+** Installing the configuration file
+In this folder there is a file called =init.el=. Move it to your =.emacs.d= folder.
+
+After doing this, when you open Emacs it should automatically load the configuration. There is a dark theme by default, and it may have messages at the bottom about connecting to servers to download packages.
+
+*** Unix (Linux/Mac)
+Run these commands in the terminal. If you don't have =curl=, just download or copy the contents of =init.el=, and put them in the file =~/.emacs.d/init.el=.
+
+#+begin_src sh
+  mkdir -p ~/.emacs.d
+  curl 'https://raw.githubusercontent.com/linux-club-umd/presentations/main/emacs/init.el' > ~/.emacs.d/init.el
+#+end_src
+
+*** Windows
+Run these commands in PowerShell.
+
+#+begin_src text
+  New-Item -Path "$env:APPDATA\.emacs.d" -ItemType Directory
+  curl.exe 'https://raw.githubusercontent.com/linux-club-umd/presentations/main/emacs/init.el' -o "$env:APPDATA\.emacs.d\init.el"
+#+end_src
+
+If this doesn't work, what you need to do is:
+
+- Make the =.emacs.d= directory (folder).
+  - Open the Roaming folder by pressing Windows key and 'r', then typing =%appdata%=, and press enter.
+  - Create a =.emacs.d= directory there.
+- Download the =init.el= file or copy its contents, and put them in the file =init.el= inside the =.emacs.d= directory. The file extension *must* be =.el=, not =.el.txt=.
+
+**** Issue: Certificate errors
+If you get errors about TLS certificates for melpa.org, elpa.gnu.org, and
+elpa.nongnu.org, you'll have to fix them by accepting the certificates as valid.
+Emacs will prompt you, and at the bottom it will tell you what keys you can
+press. Press 'a' to accept the certificate. This will accept it and remember
+that you accepted it, so you shouldn't have to do this again unless you remove Emacs configuration/settings files.
