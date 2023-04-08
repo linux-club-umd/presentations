@@ -288,6 +288,10 @@ Further reading: [Open Source Software Litigation and Risks](https://www.morganl
 
 Now you know the basics of software licensing!
 
+![](./img/qr.png)
+
+Slides: <https://linuxclub.umd.edu/bitcamp/licensing>
+
 # Bibliography
 
 ## Bibliography
