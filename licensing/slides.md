@@ -116,15 +116,14 @@ Copyleft licenses lets people do almost anything they want with your project, **
 - Changes must be redistributed with a copyleft license and with source code
 - Some copyleft licenses (GPL) may be incompatible with proprietary code
   - GPL extends to linking libraries in compiled code
-  <!--  TODO: Confirm with source. Elaborate or clarify. -->
   - LGPL projects can be linked to proprietary code
 
 ## Examples
 
-- GPL: [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING) (v2), [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE) (V3)
-  - provides additional clarifications on license compatibility, digital rights management, and patents
+- GPL: [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING) (v2), [LLaMA](https://github.com/facebookresearch/llama/blob/main/LICENSE) (v3)
+  - v3 provides additional clarifications on license compatibility, digital rights management, and patents
 - AGPL: [Canvas LMS](https://github.com/instructure/canvas-lms/blob/master/LICENSE)
-  - requires servers hosting the code to release their source code
+  - requires servers hosting the source code to share any changes
 - LGPL: [QT](https://www.qt.io/licensing/open-source-lgpl-obligations) (most of it)
   - most of it can be linked in proprietary projects without source redistribution
 
@@ -227,8 +226,6 @@ When a CLA requires a contributor to assign unrestricted republishing rights to 
 
 They may provide some of the freedoms and use terminology associated with FOSS, but do not fit all the requirements.
 
-<!-- ## Proprietary licenses -->
-
 An important requirement of FOSS is that it can be used for any purpose (commercial or otherwise).
 
 - Just because you can look at the code doesn't mean it's FOSS
@@ -238,7 +235,7 @@ An important requirement of FOSS is that it can be used for any purpose (commerc
 
 - Business Source License ("permissive")
   - Releases are source available with a promise to open-source it later
-  - [MariaDB](https://mariadb.com/bsl11/), [Codon](https://github.com/exaloop/codon/blob/develop/LICENSE)), [CockroachDB](https://www.cockroachlabs.com/)
+  - [MariaDB](https://mariadb.com/bsl11/), [Codon](https://github.com/exaloop/codon/blob/develop/LICENSE), [CockroachDB](https://github.com/cockroachdb/cockroach/blob/master/LICENSE)
 - Server Side Public License ("copyleft")
   - Copyleft extends much farther than the AGPL
   - [MongoDB](https://www.mongodb.com/licensing/server-side-public-license)
