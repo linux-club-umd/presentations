@@ -1,5 +1,7 @@
 # Licensing: How to open-source your work
 
+Slides can be viewed in [HTML](./slides.html) or [PDF](./slides.pdf) format.
+
 ## Brief
 
 Releasing your work as open-source is awesome, but it's not quite as simple as
