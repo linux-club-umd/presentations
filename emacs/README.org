@@ -17,7 +17,7 @@ Run these commands in the terminal. If you don't have =curl=, just download or c
 
 #+begin_src sh
   mkdir -p ~/.emacs.d
-  curl 'https://raw.githubusercontent.com/linux-club-umd/presentations/main/emacs/init.el' > ~/.emacs.d/init.el
+  curl 'https://raw.githubusercontent.com/linux-club-umd/presentations/main/emacs/init.el' -o ~/.emacs.d/init.el
 #+end_src
 
 *** Windows
