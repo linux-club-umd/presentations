@@ -355,6 +355,7 @@
 ;; (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-alternate-file)
 
 (use-package dired
+  :ensure nil
   :custom
   (dired-listing-switches "-lah")
   (dired-recursive-copies 'top)
